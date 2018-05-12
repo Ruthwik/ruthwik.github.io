@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gradient Descent Algorithm 
-subtitle: Reach fast to Nadir from Zenith.
+subtitle: Reach fast to Nadir.
 published: true
 categories: machinelearning
 tags: [gradient descent,optimization , machine learning]
