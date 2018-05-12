@@ -45,6 +45,7 @@ In gradient descent the theta1 is updated as theta1, minus alpha times some posi
 <img src="/img/gradientdescent/positiveslopeeqtn.JPG" alt="positiveslopeeqtn"/>
 
 <p>Let's look at the negative slope tangent line. The following figure shows a tangent line (shown in red) that has a negative slope, and therefore has a negative derivative.</p>
+<img src="/img/gradientdescent/negativeslope.JPG" alt="negativeslope"/>
 
 <p>The theta 1 is updated as theta 1, minus alpha times some negative number. The Alpha i.e the learning parameter is always a positive number. So, the theta 1 is updated as theta 1 plus something and therefore end up moving theta one to the right. This increases theta one and helps in moving towards the direction of the minimum. </p>
 
