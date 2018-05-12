@@ -1,0 +1,99 @@
+---
+layout: post
+title: Titanic Survival
+subtitle: A way to evaluate the model.
+published: true
+categories: kaggle
+gh-repo: Ruthwik/StockPrediction
+tags: [machine learning, cross validation, python, scikit]
+
+bigimg:
+  - /img/kaggleimages/titanicsurvival.jpg
+
+---
+
+<div class="text-justify">
+<p>When solving a machine learning problem we follow a consistent series of sets. 
+First, partitioning the data set into training and test sets using the <code>train_test_split</code> function. Then fitting the model with the training set. 
+And finally, applying the model on the test set to evaluate the trained model's performance.Let's recall the reason why to divide the original data into training and test sets. The test set is a way to estimate how well the model trained on the training data would perform on the new previously
+unseen data. The test must have same general attributes as the original data set.</p>
+
+<h3>Understanding Cross Validation</h3> 
+<p><i>Cross-validation is a way to predict the fit of a model to a hypothetical validation set when an explicit validation set is not available.</i>
+This is a method that goes beyond evaluating a single model using a single Train/Test split of the data. 
+
+We may have noticed that when choosing different values for the random state seed parameter in the <code>train_test_split</code> function, that the accuracy score we get from running a classifier can vary quite a bit just by chance depending on the specific samples that happen to end up in the training set.
+<script src="https://gist.github.com/Ruthwik/193bb5c201715c8a4ca0edfcbff6ab0f.js"></script>
+</p>
+<p>
+Cross-validation runs multiple different training test  splits and then averaging the results which gives more stable and reliable estimates of how the classifiers likely to perform.
+
+The figure below shows how Cross-validation works on the data.The most common type of cross-validation is k-fold cross-validation most commonly with K set to 5 or 10.
+<img src="/img/CrossValidation/Crossvalidation5fold.jpg" alt="cross validation"/>
+</p>
+
+<p>
+Let's take an example of five-fold cross-validation, the original dataset is ramdomly partitioned into five parts or close to equal size. Each of these parts is called a <b>"fold"</b>. Then a total of five models are trained. The first model <i>Model 1</i>, is trained using folds 2 through 5 as the training set and tested using fold 1 as test set. The second model <i>Model 2</i>, is trained using Folds 1, 3, 4, and 5 as the training set, leaving Fold 2 as test set for evaluation , and so on. When all five models have five accuracy values, the values are averaged to find the model accuracy.
+</p>
+
+<p>
+In scikit-learn, we can use the <code>cross_val_score</code> function from the model selection module to do cross-validation. The parameters for this function are: the model we want to evaluate, and then the data set , and then the corresponding target values. By default, cross_val_score does threefold cross-validation. So it returns three accuracy scores, one for each of the three folds. In order to change the number of folds, we can set the CV parameter. For example, CV equals 5 will perform five-fold cross-validation. Then we compute the mean of all the accuracy scores across the folds and report the mean cross-validation score as a measure of how accurate we can expect the model to be on average. One benefit of computing the accuracy of a model on multiple splits instead of a single split, is that it gives us potentially useful information about how sensitive the model is to the nature of the specific training set. 
+<script src="https://gist.github.com/Ruthwik/8346012dec1c740a0b56aaf46b941c08.js"></script>
+
+It does take more time and computation to do cross-validation.
+ So for example, if we perform k-fold cross-validation and we don't compute the fold results in parallel, 
+ it'll take about k times as long to get the accuracy scores as it would with just one Train/Test split. 
+ However, the gain in our knowledge of how the model is likely to perform on future data is usually well worth this cost
+</p>
+<h3>Stratified Cross-validation</h3> 
+<p>Some  problems can exhibit a large imbalance in the distribution of the target classes: for instance there could be several times more negative samples 
+
+Dataset sometimes might have been created in such a way that the records are sorted or show bias in ordering by class label. For example, if a dataset contains same target label (class) in fold 1 and missing other target labels or classes which is our test set to evaluate our Model. So problems of imbalance in distribution may reduce the informativeness of the evaluation.
+</p>
+<p>
+In the example below, we can see that in fold 1 only Iris-setosa class is considered.Therefore   
+</p>
+<img src="/img/CrossValidation/Stratified1.png" alt="Stratified" height="60%" width="60%">
+<p>
+In such cases <b>Stratified Cross-validation</b> is used to ensure that relative class frequencies is approximately preserved in each train and validation fold.</p>
+<img src="/img/CrossValidation/Stratified2.png" alt="Stratified"/>
+
+<p>
+ In Stratified Cross-validation, each fold contains a proportion of classes that matches overall dataset. This helps to represent all classes fairly in the test set. 
+ <script src="https://gist.github.com/Ruthwik/840664fc6916fa07e28d47b026ca1390.js"></script>
+</p>
+<h3>Leave-one-out cross-validation</h3> 
+<p>
+The Scikit-learn documentation says that <i>LeaveOneGroupOut is a cross-validation scheme which holds out the samples according to a third-party provided array of integer groups. This group information can be used to encode arbitrary domain specific pre-defined cross-validation folds.Each training set is thus constituted by all the samples except the ones related to a specific group</i>
+The image below shows how the dataset is split.
+</p>
+<img src="/img/CrossValidation/Stratified3.png" alt="Stratified"/>
+
+<h3>Validation curves</h3> 	
+<p>
+ Sometimes we want to evaluate the effect that an important parameter of a model has on the cross-validation scores. The useful function <code>validation_curve</code> makes it easy to run this type of experiment. This fucation will do threefold cross-validation by default but can be changed to different fold with the CV parameter. The other parameters are a classifier, parameter name, and set of parameter values, we want to sweep across.
+ 
+ The below code shown here as an example will fit four Lasso Regression models with different alpha parameters and with five different folds. So each model will fit five different fold and a total of 20 train and test scores each is returned. The returned values is displayed in  four-by-five arrays.
+  <script src="https://gist.github.com/Ruthwik/7216468e78d662cb7edf96e27ca9cf53.js"></script>
+ </p>
+ <p>
+ We can plot these results from validation curve as shown here to get an idea of how sensitive the performance of the model is to changes in the given parameter.The x axis corresponds to values of the parameter (here alpha) and the y axis gives the evaluation score
+
+</p>
+ <img src="/img/CrossValidation/validationcurve.png" alt="validationcurve"/>
+ <p>
+ Before concluding let's remind that Cross Validation is used to evaluate the model and not learn or tune a new model.
+ </p>
+ 
+ <p>I hope you liked this tutorial. You can find the complete code as a jupyter notebook on my github <a href="https://github.com/Ruthwik/Machine-Learning/blob/master/Code/Cross%20Validation.ipynb">page</a>. 
+Useful resources to read:  
+	<ul>
+      <li><a href="http://scikit-learn.org/stable/modules/cross_validation.html">Cross Validation scikit-learn</a></li>
+      <li><a href="https://www.kaggle.com/dansbecker/cross-validation">Kaggle's Tutorial by Dans Becker</a></li>
+  	</ul> 
+</p>
+
+<p>If you have any question or feedback, please do reach out to me by commenting below.</p>
+
+
+</div>
