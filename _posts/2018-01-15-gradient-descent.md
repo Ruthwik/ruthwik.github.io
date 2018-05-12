@@ -11,23 +11,30 @@ bigimg:
 
 ---
 
-<p>Gradient descent is an optimization algorithm for finding the minimum of a function. It takes steps proportional to the negative of the gradient to find the local minimum of a function.</p>
+<p>Gradient descent is an optimization algorithm for finding the minimum of a function. It takes steps proportional to the negative of the gradient to find the local minimum of a function. The following 3D figure shows an example of gradient descent. theta1 and theta0 are the two paramters. Gradient descent tries to find one of the local minima.</p>
 
 <img src="/img/gradientdescent/gradient3d2.JPG" alt="gradient3d2"/>
-<p>The algorithm for gradient descent is shown as follows</p>
 
-<img src="https://github.com/Ruthwik/ruthwik.github.io/blob/master/img/gradientdescent/gradienteqnt.jpg" alt="gradienteqnt"/>
+> Gradients really become meaningful in multivarible functions, where the gradient is a vector of partial derivatives. With single variable functions, the gradient is a one dimensional vector with the slope as its single coordinate (so, not very different to the slope at all).
 
-<p>alpha is called learning rate. It is length of the step taken from every point to reach the local minima.</p>
+<p>The algorithm for gradient descent is shown as follows. The parameters are simultaneously updated.</p>
+
+<img src="/img/gradientdescent/equation.jpg" alt="equation"/>
+
+<p>The hyperparamter alpha is called learning rate. It is length of the step taken from every point to reach the local minima.</p>
 > The first order derivative of a function gives the slope at that particular point.
 
-<h3>Deep dive</h3>
+<h3>Algorithm Explained</h3>
 <p>
-Let's look at an example and understand the gradient descent. Consider a linear equation as shown below</p>
+Let's look at an example and understand the gradient descent algorithm. Consider a linear equation as shown below. theta1 and theta0 are the two paramters. I will use <code>theta</code> wording instead of symbol.</p>
 <img src="/img/gradientdescent/linearequation.JPG" alt="linearequation"/>
 
-<p>
-The following figure shows plot between J(theta1) and theta1 and a tangent line (shown in red) that has a positive slope, and therefore has a positive derivative.    
+<p>There are many cost functions. In our case of linear equation, our purpose is to reduce the mean squared error between the hypothesis (h(x)) value and actual value.The cost function is shown as follows<p>
+
+<img src="/img/gradientdescent/costfunction.JPG" alt="costfunction"/>
+
+
+The following figure shows plot between J(theta1), theta1 and a tangent line (shown in red) that has a positive slope, and therefore has a positive derivative.    
 </p>
 
 <img src="/img/gradientdescent/positiveslope.JPG" alt="positiveslope"/>
@@ -46,21 +53,21 @@ In gradient descent the theta1 is updated as theta1, minus alpha times some posi
 
 <p>The learning parameter (alpha) value determines how fast or slow the gradient descent will be. If it is too small gradient descent will be slow. If it is too large then gradient descent will overshoot and may fail to converge.</p>
 
-<h3>What if theta 1 is already at local minima?</h3>
+<h4>What if theta 1 is already at local minima?</h4>
 
 <p>At the local optimum,the derivative will be equal to zero. So, the slope of this line will be equal to zero and thus this derivative term is equal to zero. If we are already at the local optimum it leaves theta 1 unchanged cause its updates as theta 1 equals theta 1. Therefore the  solution remains at the local optimum.</p>
 
 <img src="/img/gradientdescent/thetaatlocal.JPG" alt="thetaatlocal"/>
 
-<h3>How gradient descent finds local optima when there are many local optima?</h3>
+<h4>How gradient descent finds local optima when there are many local optima?</h4>
 
 <p>This happens in the non-convex functions</p>
 
-> convex function has no more than one minimum.
+> Convex function has no more than one minimum.
 > Non-convex has with many local minima, but no global minima
 <p>Let's first look at convex and non-convex functions.The following figure shows convex and non-convex function</p>
 
-<img src="https://github.com/Ruthwik/ruthwik.github.io/blob/master/img/gradientdescent/nonconvex.jpg" alt="nonconvex"/>
+<img src="/img/gradientdescent/convex.jpg" alt="convex"/>
 
 <p>In non-convex functions depending on the starting point, gradient descent will typically be attracted to the first local minima it encounters, so there is no guarantee it will a “good” local minima. In non-convex function shown above, there are a lot of local optima. And the optimization algorithms get stuck in a local optimum rather than find its way to a global optimum. How can we avoid this problem? In logistic regression, the initial cost function is a non-convex function. It is converted to convex function and this guarantees to find the global optimum.</p>
 
