@@ -29,11 +29,11 @@ bigimg:
 Let's look at an example and understand the gradient descent algorithm. Consider a linear equation as shown below. theta1 and theta0 are the two paramters. I will use <code>theta</code> wording instead of symbol.</p>
 <img src="/img/gradientdescent/linearequation.JPG" alt="linearequation"/>
 
-<p>There are many cost functions. In our case of linear equation, our purpose is to reduce the mean squared error between the hypothesis (h(x)) value and actual value.The cost function is shown as follows<p>
+<p>There are many cost functions. In our case of linear equation, our purpose is to reduce the mean squared error between the hypothesis (h(x)) value and actual value.The cost function is shown as follows</p>
 
 <img src="/img/gradientdescent/costfunction.JPG" alt="costfunction"/>
 
-
+<p>
 The following figure shows plot between J(theta1), theta1 and a tangent line (shown in red) that has a positive slope, and therefore has a positive derivative.    
 </p>
 
@@ -63,8 +63,8 @@ In gradient descent the theta1 is updated as theta1, minus alpha times some posi
 
 <p>This happens in the non-convex functions</p>
 
-> Convex function has no more than one minimum.
-> Non-convex has with many local minima, but no global minima
+> Convex function has no more than one minimum.Non-convex has with many local minima, but no global minima
+
 <p>Let's first look at convex and non-convex functions.The following figure shows convex and non-convex function</p>
 
 <img src="/img/gradientdescent/convex.jpg" alt="convex"/>
