@@ -99,7 +99,14 @@ If local optima aren't a problem, then what is a problem? It turns out that plat
 
 </ul>
 </p>
+<h3>Gradient Descent in Neural Networks</h3>
+<p>
+In the Linear equation that explained above has two paramters (theta 1 and theta 2). Gradient Descent will minimize the cost function (Mean Square error) by updating theta 1 and theta 2.
+</p>
 
+<p>
+In Neural Networks there are many weight parameters in different layers to update simultaneously. In order to minimize the loss function, Gradient Descent uses backpropogation to update each weight parameter in each layer of Neural Network.
+</p>
 <p>I hope you liked this tutorial. Do check the following resources:  
 	<ul>
       <li><a href="http://www.ugrad.math.ubc.ca/coursedoc/math100/notes/derivs/deriv5.html">So what is the derivative, after all?</a></li>
