@@ -12,21 +12,25 @@ bigimg:
 ---
 
 <div class="text-justify">
-<p>TensorFlow is a multipurpose Opensource software library for numerical computation using data flow graphs. It is originally developed by Google Brain Team to conduct deep neural networks research. TensorFlow is written in Python, C++ and CUDA. It provides stable Python API,C APIs and without backwards compatability gaurantee  C++, Go, Java, JavaScript and Swift. TensorFlow is applied in a wide variety of domains as well.
-
-<img src="/img/tensorflownutshell/magenta.gif" alt="magenta"/>
-<&nbsp><&nbsp> Source: magenta.tensorflow.org/
+<p>TensorFlow is a multipurpose Opensource software library for numerical computation using data flow graphs. It is originally developed by Google Brain Team to conduct deep neural networks research. TensorFlow is written in Python, C++ and CUDA. It provides stable Python API,C APIs and without backwards compatability gaurantee  C++, Go, Java, JavaScript and Swift. TensorFlow is applied in a wide variety of domains as well. Here is an example project named Magenta. Magenta is a project devoted to music and art generation with machine intelligence. The following figure shows how Tensorflow is used to help the user draw a picture.
 </p>
 
-<p> In	this	tutorial	I	will	cover	the	very	basics	of	TensorFlow	not	going	much	into	deep	
-learning	at	all.	TensorFlow	can	be	used	from	many	programming	languages.	I	will	
-give	simple	examples,	such	as	linear	regression,	showing	the	python	API	as	well	as	
-the	recent	interface	to	R.	, visit <a href="http://scikit-learn.org/">official website.</a></p>
+<img src="/img/tensorflownutshell/magenta.gif" alt="magenta"/>
+<p> &emsp Source: magenta.tensorflow.org </p>
 
-<h3>Understanding Linear Regression</h3> 
-<p>Linear regression allows us to find the relationship between dependent variable denoted as Y and one or more independent variables X. Let's understand simplest form of the regression equation
- with one dependent and one independent variable. </p>
 
+<p> In this tutorial I	will cover the very	basics of TensorFlow. Deep learning will be covered in a different post. I will be using TensorFlow's Python API to explain.	
+
+<h3>Installing TensorFlow</h3> 
+<p>TensorFlow is a library and it can be installed like any other library using <code>pip</code> command.
+<ul>
+  <li>Install python 3.6 and above. Download from <a href="https://www.python.org/downloads//">here.</a></p></li>
+  <li>Install Tensorflow <pre><code class="language-python">
+		pip3 install --upgrade tensorflow
+ </code></pre></li>
+</ul>
+Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
+</p>
 <p>
 In algebra, the points which are (x,y) pairs can be plotted on the Cartesian coordinate system and also a straight line on the Cartesian coordinate system
  has the equation y = mx + b, where m is the slope of the line, and b is the y-intercept of the line. 
@@ -34,9 +38,7 @@ In algebra, the points which are (x,y) pairs can be plotted on the Cartesian coo
   </p>
 
  <p>Let's rewrite the equation for more than one independent variables</p>
- <pre><code class="language-python">
- y = m<sub>1</sub>x<sub>1</sub> +m<sub>2</sub>x<sub>2</sub>+ m<sub>3</sub>x<sub>3</sub> + ....... + m<sub>i</sub>x<sub>i</sub> + b
- </code></pre>
+ 
  <p>
  where
  <ul>
