@@ -21,7 +21,7 @@ bigimg:
 
 <p> In this tutorial I	will cover the very	basics of TensorFlow. Deep learning will be covered in a different post. I will be using TensorFlow's Python API to explain.	
 
-<h3>Installing TensorFlow</h3> 
+<h2>1. Installing TensorFlow</h2> 
 <p>TensorFlow is a library and it can be installed like any other library using <code>pip</code> command.
 <ul>
   <li>Install python 3.6 and above. Download from <a href="https://www.python.org/downloads//">here.</a></li>
@@ -30,8 +30,13 @@ bigimg:
 </p>
 > Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
 
+<h3> 1.1 Importing TensorFlow</h3> 
+<p>After installing, you can run the <code>import</code> statement to use TensorFlow library.
+<script src="https://gist.github.com/Ruthwik/f1f93b42c1c47a3d85fa042d64d3d377.js"></script>
+</p>
 
-<h3>Tensors</h3> 
+
+<h2>2. Tensors</h2> 
 <p>Let's us first understand what are tensors and the reference that we can take to get going.</p>
 <p>A scalar is a physical quantity that it represented by a dimensional number
 at a particular point in space and time. Examples are hydrostatic pressure
@@ -73,60 +78,99 @@ The following image shows the various quantity.
 In simple terms Tensors are called as multidimenional arrays.
 </p>
 
-<h3>Computational graph</h3> 
+<h2>3. Computational graph</h2> 
 <p>
 TensorFlow internally represent the operations and performs its computation using a data flow graph (or computational graph). In other words
-Tensorflow approaches series of computations as a flow of data through a graph with nodes being computation units and edges being flow of Tensors. Nodes are the operations and edges are the tensors
-It consists of two phases
-<ul>
-  <li>Assemble the graph computational graph</li>
-  <li>Execute the graph computational graph</li>
-</ul>
+Tensorflow approaches series of computations as a flow of data through a graph with nodes being computation units and edges being flow of Tensors. 
 </p>	
 <img src="/img/tensorflownutshell/tf.gif" alt="magenta"/>
+<p>
+Nodes are the operations such as addition or subtraction and edges are the tensors.
+It consists of two phases
+<ul>
+  <li>Build the graph: Here you define the Variables, Constants and Placeholders, and their relations.(define the mathematical operations on them)</li>
+  <li>Execute the graph : Till now, all the variables and the computations applied. They are computed in this phase</li>
+</ul>
+</p>	
+<img src="/img/tensorflownutshell/tf_graph.png" alt="magenta"/>
 
-<h3>Importing TensorFlow</h3> 
+<h2>3.1. Build the graph <h2>
+
+<h3> 3.1.1. Variables</h3> 
+
+A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.
+
+The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. The value can be changed using one of the assign methods.
+
+Variables in TensorFlow are managed by the Session. They persist between sessions which are useful because Tensor and Operation objects are immutable. Variables can be created by tf.Variable().
+
+tensorflow_var = tf.Variable(1, name="my_variable")
+Most of the time you will want to create these variables as tensors of zeros, ones or random values:
+
+tf.zeros() — creates a matrix full of zeros
+tf.ones() — creates a matrix full of ones
+tf.random_normal() — a matrix with random uniform values between an interval
+tf.random_uniform() — random normally distributed numbers
+tf.truncated_normal() — same as random normal but doesn’t include any numbers more than 2 standard deviations.
+
+
+
+<h3>3.1.2. Placeholders</h3> 
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>DataTypes</h3> 
+<h3>3.1.3. Model</h3> 
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>Constants</h3> 
+<h3>3.1.4. Loss Measure</h3> 
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>Variables</h3> 
+<h3>3.1.5. Optimization Method</h3> 
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>Session</h3> 
+tf_graph
+<h2>3.2. Run the graph <h2>
+
+<h2>3.2.1 Session</h2> 
 <p>A Session object encapsulates the environment in which Operation objects are
 executed, and Tensor objects are evaluated.
 
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>Placeholders</h3> 
+<h2>4. More things <h2>
+<h3>4.1 DataTypes</h3> 
+<p>Tensors have a data type in addition to shape and dimension. The following table shows the various datatypes available.
+<img src="/img/tensorflownutshell/tensor_datatypes.jpg" alt="magenta"/>
+</p>
+
+<h3>4.2 Constants</h3> 
+<p>Constant value cannot be changed When it is sure that value is not changed, tf.consant is used. It's initialization should be with a value, not with operation.
+<script src="https://gist.github.com/Ruthwik/b00a1dc8def5956d5420272c1a33d116.js"></script>
+</p>
+
+<h2>5. TensorBoard</h2> 
+<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
+By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
+<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+</p>
+<h3>5.1 Scope</h3>
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
-<h3>TensorBoard</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
-</p>
 
 <p>
 Before concluding let's predict the price of the apple stock on a given day. 
@@ -141,7 +185,7 @@ If you want to learn more about maths behind Linear Regression or ML in general,
 ">An Introduction to Tensors for Students
 of Physics and Engineering</a></li>
       <li><a href="https://medium.com/@quantumsteinke/whats-the-difference-between-a-matrix-and-a-tensor-4505fbdc576c">What’s the difference between a matrix and a tensor?</a></li>
-	  <li><a href="https://medium.com/@quantumsteinke/whats-the-difference-between-a-matrix-and-a-tensor-4505fbdc576c">What’s the difference between a matrix and a tensor?</a></li>
+	  <li><a href="https://becominghuman.ai/an-introduction-to-tensorflow-f4f31e3ea1c0">An Introduction to TensorFlow by Liu Songxiang</a></li>
 	  <li><a href="https://medium.com/@quantumsteinke/whats-the-difference-between-a-matrix-and-a-tensor-4505fbdc576c">What’s the difference between a matrix and a tensor?</a></li>
 	  <li><a href="https://medium.com/@quantumsteinke/whats-the-difference-between-a-matrix-and-a-tensor-4505fbdc576c">What’s the difference between a matrix and a tensor?</a></li>
   	</ul> 

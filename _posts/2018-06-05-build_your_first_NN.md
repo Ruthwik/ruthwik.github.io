@@ -7,7 +7,7 @@ categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
 tags: [deep learning, TensorFlow, python, neural networks]
 bigimg:
-  - /img/tensorflownutshell/tensorflowimage.jpg
+  - /img/nn_part1/nnpart1.jpg
 
 ---
 
