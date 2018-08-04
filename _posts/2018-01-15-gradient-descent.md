@@ -89,7 +89,7 @@ In a neural network, this intuition isn't actually correct. It turns out if we c
 If local optima aren't a problem, then what is a problem? It turns out that plateaus can really slow down learning.
 </p>
 > a plateau is a region where the derivative is close to zero for a long time.
-> Self is not a Keyword. It is a coding convention.
+
 <p> So if we are at a plateau, then gradient descents will move down the surface, and because the gradient is zero or near zero, the surface is quite flat. And maybe algorithm can actually take a very long time, to slowly find its way off the plateau due to a random perturbation of left or right.</p>
 <p>
  The final takeaways about local optima are
