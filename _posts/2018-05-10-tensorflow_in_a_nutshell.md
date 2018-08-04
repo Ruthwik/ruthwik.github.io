@@ -25,24 +25,51 @@ bigimg:
 <p>TensorFlow is a library and it can be installed like any other library using <code>pip</code> command.
 <ul>
   <li>Install python 3.6 and above. Download from <a href="https://www.python.org/downloads//">here.</a></p></li>
-  <li>Install Tensorflow <pre><code class="language-python">
-		pip3 install --upgrade tensorflow
- </code></pre></li>
+  <li>Install Tensorflow <pre><code>pip3 install --upgrade tensorflow</code></pre></li>
 </ul>
-Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
 </p>
+> Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
 
 
 <h3>Tensors</h3> 
+<p>Let's us first understand what are tensors and the reference that we can take to get going.</p>
+<p>A scalar is a physical quantity that it represented by a dimensional number
+at a particular point in space and time. Examples are hydrostatic pressure
+and temperature.</p>
+<p>A vector is a bookkeeping tool to keep track of two pieces of information
+(typically magnitude and direction) for a physical quantity. Examples are
+position, force and velocity.
+</p>
+<p>
+<code>What happens when we need to keep track of three pieces of information
+for a given physical quantity?</code>
+</p>
 
 > Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
+
+<img src="/img/tensorflownutshell/tensors.jpg" alt="magenta"/>
+
+<p>
+A Tensor has the following properties:
+</p> 
+<img src="/img/tensorflownutshell/tensor_rank.jpg" alt="magenta"/>
+
+<p>
+The rank of a tensor is its number of dimensions.The shape of a tensor is the number of elements in each dimension
+</p>
+| Rank        | Shape           | Dimension number  | Example  |
+| ------------- |:-------------:| -----:| -----:|
+| 0      | [] | 	0-D | A 0-D tensor. A scalar. |
+| 1      | [D0] | 	1-D | A 1-D tensor with shape [5]. |
+| 2      | [D0, D1] | 	2-D | A 2-D tensor with shape [3, 4].|
+| 3      | [D0, D1, D2] | 	3-D | A 3-D tensor with shape [1, 4, 3]. |
+| n      | [D0, D1, ... Dn-1] | 	n-D | A tensor with shape [D0, D1, ... Dn-1]. |
+
+<img src="/img/tensorflownutshell/tensor_scalar_vector.jpg" alt="magenta"/>
 <p>
 
-</p> 
-<p>Let's get started.</p>
-<p>Firstly, we will import the required libraries which includes: Scikit, Numpy, Pandas and Matplotlib.
-<script src="https://gist.github.com/Ruthwik/21630947bbaf864e8bd8cebaf8433a01.js"></script>
 </p>
+
 
 <p>Now, lets see the steps for preparing the dataset for Linear Regression model training. 
 Firstly, we import the stock dataset file using pandas library method <code>pd.read_csv</code> to pandas dataframe. 
