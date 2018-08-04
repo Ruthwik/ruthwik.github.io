@@ -1,11 +1,11 @@
 ---
 layout: post
-title: TensorFlow in a Nutshell
-subtitle: Quick start to TensorFlow.
+title: Neural Networks 101  - Part 1
+subtitle: Build your first Neural network.
 published: true
 categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
-tags: [machine learning, TensorFlow, python]
+tags: [deep learning, TensorFlow, python, neural networks]
 bigimg:
   - /img/tensorflownutshell/tensorflowimage.jpg
 
@@ -73,25 +73,14 @@ The following image shows the various quantity.
 In simple terms Tensors are called as multidimenional arrays.
 </p>
 
-<h3>Computational graph</h3> 
+<h3>Computational graphs</h3> 
 <p>
 TensorFlow internally represent the operations and performs its computation using a data flow graph (or computational graph). In other words
-Tensorflow approaches series of computations as a flow of data through a graph with nodes being computation units and edges being flow of Tensors. Nodes are the operations and edges are the tensors
-It consists of two phases
-<ul>
-  <li>Assemble the graph computational graph</li>
-  <li>Execute the graph computational graph</li>
-</ul>
+Tensorflow approaches series of computations as a flow of data through a graph with nodes being computation units and edges being flow of Tensors.
 </p>	
 <img src="/img/tensorflownutshell/tf.gif" alt="magenta"/>
 
 <h3>Importing TensorFlow</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
-</p>
-
-<h3>DataTypes</h3> 
 <p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
 By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
@@ -110,9 +99,8 @@ By default, test_size value is set to 0.25 and train_size value is set to 0.75. 
 </p>
 
 <h3>Session</h3> 
-<p>A Session object encapsulates the environment in which Operation objects are
-executed, and Tensor objects are evaluated.
-
+<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
+By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
 <script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
 </p>
 
