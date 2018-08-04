@@ -12,11 +12,11 @@ bigimg:
 ---
 
 <div class="text-justify">
-<p>TensorFlow is a multipurpose Opensource software library for numerical computation using data flow graphs. It is originally developed by Google Brain Team to conduct deep neural networks research. TensorFlow is written in Python, C++ and CUDA. It provides stable Python API,C APIs and without backwards compatability gaurantee  C++, Go, Java, JavaScript and Swift. TensorFlow is applied in a wide variety of domains as well. Here is an example project named Magenta. Magenta is a project devoted to music and art generation with machine intelligence. The following figure shows how Tensorflow is used to help the user draw a picture.
+<p>TensorFlow is a multipurpose Opensource software library for numerical computation using data flow graphs. It is originally developed by Google Brain Team to conduct deep neural networks research. TensorFlow is written in Python, C++ and CUDA. It provides stable Python API,C APIs and without backwards compatability gaurantee  C++, Go, Java, JavaScript and Swift. TensorFlow is applied in a wide variety of domains as well.The following figure shows how SketchRNN built using TensorFlow will complete your sketch in multiple ways.
 </p>
 
 <img src="/img/tensorflownutshell/magenta.gif" alt="magenta"/>
-<p> &emsp Source: magenta.tensorflow.org </p>
+<p> <&emsp> Source: magenta.tensorflow.org </p>
 
 
 <p> In this tutorial I	will cover the very	basics of TensorFlow. Deep learning will be covered in a different post. I will be using TensorFlow's Python API to explain.	
@@ -31,30 +31,13 @@ bigimg:
 </ul>
 Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
 </p>
+
+
+<h3>Tensors</h3> 
+
+> Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
 <p>
-In algebra, the points which are (x,y) pairs can be plotted on the Cartesian coordinate system and also a straight line on the Cartesian coordinate system
- has the equation y = mx + b, where m is the slope of the line, and b is the y-intercept of the line. 
- In other terms y = estimated dependent variable , m is the feature weights, b = bias term, and x = score on the independent variable.
-  </p>
 
- <p>Let's rewrite the equation for more than one independent variables</p>
- 
- <p>
- where
- <ul>
-  <li>n is the number of features</li>
-  <li>x<sub>i</sub> is the i<sup>th</sup> feature </li>
-  <li>m<sub>i</sub> is the i<sup>th</sup> model parameter</li>
-</ul>
-
-If you want to know the detail maths behind Linear Regression, some great resources are provided at the end of this tutorial.
-</p>
-
-<h3>Implementation</h3> 
-<p>
-In our first attempt to learn ML algorithms using scikit, we will implement Linear Regression to predict prices of stocks.  
-In this example we will use apple stock prices for 1 year which can be downloaded from <a href="https://github.com/Ruthwik/StockPrediction/blob/master/Data/StockDataSet.csv">here</a>.
-You can try with any other stock which is available at <a href="https://www.nasdaq.com/symbol/aapl/historical">nasdaq</a>.
 </p> 
 <p>Let's get started.</p>
 <p>Firstly, we will import the required libraries which includes: Scikit, Numpy, Pandas and Matplotlib.
