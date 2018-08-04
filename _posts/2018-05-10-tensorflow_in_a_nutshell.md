@@ -47,7 +47,7 @@ for a given physical quantity?</code>
 
 > Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
 
-<img src="/img/tensorflownutshell/tensors.jpg" alt="magenta"/>
+<img src="/img/tensorflownutshell/tensors.png" alt="magenta"/>
 
 <p>
 A Tensor has the following properties:
@@ -57,13 +57,13 @@ A Tensor has the following properties:
 <p>
 The rank of a tensor is its number of dimensions.The shape of a tensor is the number of elements in each dimension
 </p>
-| Rank        | Shape           | Dimension number  | Example  |
-| ------------- |:-------------:| -----:| -----:|
-| 0      | [] | 	0-D | A 0-D tensor. A scalar. |
-| 1      | [D0] | 	1-D | A 1-D tensor with shape [5]. |
-| 2      | [D0, D1] | 	2-D | A 2-D tensor with shape [3, 4].|
-| 3      | [D0, D1, D2] | 	3-D | A 3-D tensor with shape [1, 4, 3]. |
-| n      | [D0, D1, ... Dn-1] | 	n-D | A tensor with shape [D0, D1, ... Dn-1]. |
+| Rank          | Shape              | Dimension number  | Example                                 |
+| ------------- |:------------------:| :----------------:| --------------------------------------: |
+| 0             | []                 | 	0-D  			 | A 0-D tensor. A scalar.                 |
+| 1             | [D0]               | 	1-D 			 | A 1-D tensor with shape [5].            |
+| 2             | [D0, D1]           | 	2-D 			 | A 2-D tensor with shape [3, 4].         |
+| 3             | [D0, D1, D2]       | 	3-D 			 | A 3-D tensor with shape [1, 4, 3].      |
+| n             | [D0, D1, ... Dn-1] | 	n-D  			 | A tensor with shape [D0, D1, ... Dn-1]. |
 
 <img src="/img/tensorflownutshell/tensor_scalar_vector.jpg" alt="magenta"/>
 <p>
