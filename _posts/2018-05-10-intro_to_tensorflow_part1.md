@@ -53,7 +53,7 @@ for a given physical quantity?</code>
 
 > Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors.Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
 
-<img src="/img/tensorflownutshell/tensors.png" alt="tensors" width="451" height="406/>
+<img src="/img/tensorflownutshell/tensors.png" alt="tensors"/>
 
 <p>
 A Tensor has the following properties:
