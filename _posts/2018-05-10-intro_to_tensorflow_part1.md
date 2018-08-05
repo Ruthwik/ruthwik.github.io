@@ -64,7 +64,7 @@ A Tensor has the following properties:
 The rank of a tensor is its number of dimensions.The shape of a tensor is the number of elements in each dimension
 </p>
 
-<img src="/img/tensorflownutshell/shape.jpg" alt="shape"/>
+<img src="/img/tensorflownutshell/shape.JPG" alt="shape"/>
 
 <p>
 The following image gives a better intuition about Tensors.
