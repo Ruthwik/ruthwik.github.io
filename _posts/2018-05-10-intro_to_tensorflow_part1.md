@@ -209,7 +209,7 @@ The following table shows the various datatypes available.
 </p>
 
 
-<h2>5. Stitching<h2>
+<h2>5. Stitching</h2>
 
 <p>
 Before concluding let's predict the price of the apple stock on a given day.  We will use all the code snippets and use them to complete the stock
