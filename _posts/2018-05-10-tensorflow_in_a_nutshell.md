@@ -97,40 +97,59 @@ It consists of two phases
 <h2>3.1. Build the graph <h2>
 
 <h3> 3.1.1. Variables</h3> 
+<p>
+Let's see the official documentation definition
+</p>
+> A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.
 
-A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.
+> The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. The value can be changed using one of the assign methods.
 
-The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. The value can be changed using one of the assign methods.
+<p>
+Variables can be created by tf.Variable().
 
-Variables in TensorFlow are managed by the Session. They persist between sessions which are useful because Tensor and Operation objects are immutable. Variables can be created by tf.Variable().
+<pre><code>tensorflow_var = tf.Variable(value, name="variable_name",dtype)</code></pre>
 
-tensorflow_var = tf.Variable(1, name="my_variable")
 Most of the time you will want to create these variables as tensors of zeros, ones or random values:
 
-tf.zeros() — creates a matrix full of zeros
-tf.ones() — creates a matrix full of ones
-tf.random_normal() — a matrix with random uniform values between an interval
-tf.random_uniform() — random normally distributed numbers
-tf.truncated_normal() — same as random normal but doesn’t include any numbers more than 2 standard deviations.
+<ul>
+<li>tf.zeros() #creates a matrix full of zeros </li>
+<li>tf.ones() #creates a matrix full of ones </li>
+<li>tf.random_normal() #a matrix with random uniform values between an interval</li>
+<li>tf.random_uniform() #random normally distributed numbers</li>
+<li>tf.truncated_normal() 3same as random normal but doesn’t include any numbers more than 2 standard deviations.</li>
+</ul>
 
-
+<script src="https://gist.github.com/Ruthwik/8d780b7f42045dbbf5da28554baf3acb.js"></script>
+</p>
 
 <h3>3.1.2. Placeholders</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+
+<p>
+Placeholders are nodes whose values are fed in at execution time. In case of supervised learning the input-output pairs are fed in at execution time 
+for training. In other words placeholder lets you inject external data to the computation graph.While declaring placeholders we only assign datatype and shape.
+
+<pre><code>tensorflow_placeholder = tf.placeholder(dtype,shape=None,name=None)</code></pre>
+
 </p>
 
 <h3>3.1.3. Model</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+<p>
+Model is a mathematical function that maps the inputs to outputs using the model variables. For our example we will use 
+a very simple linear model
+<script src="https://gist.github.com/Ruthwik/d745f133c08270ec8233f71cfe76ba18.js"></script>
+
+In the above line we defined our linear model in which we have defined two computation nodes <code>matmul</code> and <code>add</code>.
 </p>
 
 <h3>3.1.4. Loss Measure</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+<p>
+In machine learning, error is calculated as the difference between the actual output and the predicted output.
+The function that is used to compute this error is called loss function. Different loss functions will give different 
+errors. The performance of the model depends on the loss function. One of the most widely used is mean square error, where
+loss function is calculated as the square of difference between actual value and predicted value.
+Loss measure 
+"# Mean squared error\n",
+    "cost = tf.reduce_sum(tf.pow(pred-Y, 2))/(2*n_samples)\n",
 </p>
 
 <h3>3.1.5. Optimization Method</h3> 
@@ -152,7 +171,7 @@ executed, and Tensor objects are evaluated.
 <h2>4. More things <h2>
 <h3>4.1 DataTypes</h3> 
 <p>Tensors have a data type in addition to shape and dimension. The following table shows the various datatypes available.
-<img src="/img/tensorflownutshell/tensor_datatypes.jpg" alt="magenta"/>
+<img src="/img/tensorflownutshell/tensor_datatypes.JPG" alt="magenta"/>
 </p>
 
 <h3>4.2 Constants</h3> 
