@@ -1,7 +1,7 @@
 ---
 layout: post
-title: TensorFlow in a Nutshell
-subtitle: Quick start to TensorFlow.
+title: Introduction to TensorFlow - Part 1
+subtitle: kick start to TensorFlow.
 published: true
 categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
@@ -28,6 +28,7 @@ bigimg:
   <li>Install Tensorflow <pre><code>pip3 install --upgrade tensorflow</code></pre></li>
 </ul>
 </p>
+
 > Note: We will be using TensorFlow with CPU support only. If you have supporting GPU then please see these <a href="https://www.tensorflow.org/install/">instructions.</a>
 
 <h3> 1.1 Importing TensorFlow</h3> 
@@ -50,33 +51,26 @@ position, force and velocity.
 for a given physical quantity?</code>
 </p>
 
-> Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. 
-> Elementary examples of such relations include the dot product, the cross product, and linear maps. 
-> Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
+> Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors.Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
 
-<img src="/img/tensorflownutshell/tensors.png" alt="magenta"/>
+<img src="/img/tensorflownutshell/tensors.png" alt="tensors" width="451" height="406/>
 
 <p>
 A Tensor has the following properties:
 </p> 
-<img src="/img/tensorflownutshell/tensor_rank.jpg" alt="magenta"/>
-<p> Source: https://www.slideshare.net/BigDataSpain/tensorflow-architecture-and-use-case-nasa-space-apps-challenge-by-gema-parreo </p> 
+<img src="/img/tensorflownutshell/tensor_rank.jpg" alt="tensor_rank"/>
+<p> Source: slideshare.net </p> 
 <p>
 The rank of a tensor is its number of dimensions.The shape of a tensor is the number of elements in each dimension
 </p>
 
-| Rank          | Shape              | Dimension number  | Example                                 |
-| ------------- |:------------------:| :----------------:| --------------------------------------: |
-| 0             | []                 | 	0-D  			 | A 0-D tensor. A scalar.                 |
-| 1             | [D0]               | 	1-D 			 | A 1-D tensor with shape [5].            |
-| 2             | [D0, D1]           | 	2-D 			 | A 2-D tensor with shape [3, 4].         |
-| 3             | [D0, D1, D2]       | 	3-D 			 | A 3-D tensor with shape [1, 4, 3].      |
-| n             | [D0, D1, ... Dn-1] | 	n-D  			 | A tensor with shape [D0, D1, ... Dn-1]. |
+<img src="/img/tensorflownutshell/shape.jpg" alt="shape"/>
 
 <p>
-The following image shows the various quantity.
+The following image gives a better intuition about Tensors.
 </p>
-<img src="/img/tensorflownutshell/tensor_scalar_vector.jpg" alt="magenta"/>
+<img src="/img/tensorflownutshell/tensor_scalar_vector.jpg" alt="tensor_scalar_vector"/>
+<p> Source: google.com </p> 
 <p>
 In simple terms Tensors are called as multidimenional arrays.
 </p>
@@ -97,7 +91,7 @@ It consists of two phases
 </ul>
 </p>	
 <img src="/img/tensorflownutshell/tf_graph.png" alt="magenta"/>
-
+<p> Source: google.com </p> 
 
 
 <h2>3.1. Build the graph <h2>
@@ -106,10 +100,7 @@ It consists of two phases
 <p>
 Let's see the official documentation definition
 </p>
-> A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.
-> The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. 
-> The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. 
-> The value can be changed using one of the assign methods.
+> A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. The value can be changed using one of the assign methods.
 
 <p>
 Variables can be created by tf.Variable().
@@ -218,13 +209,14 @@ The following table shows the various datatypes available.
 </p>
 
 
-
+<h2>5. Stitching<h2>
 
 <p>
-Before concluding let's predict the price of the apple stock on a given day. 
-<script src="https://gist.github.com/Ruthwik/331de409f77d68147353978fbbc08844.js"></script>
+Before concluding let's predict the price of the apple stock on a given day.  We will use all the code snippets and use them to complete the stock
+prediction script.
+<script src="https://gist.github.com/Ruthwik/5ce74992f84e3617a4f51d4f22a3b3de.js"></script>
 </p>
-<p>I hope you liked this tutorial. You can find the complete code on my github <a href="">Linear Regression</a>. 
+<p>I hope you liked this tutorial. You can find the complete code on my github <a href="">Linear Regression using TensorFlow</a>. 
 
 I have used the following references and sometimes used the same explanation. Do check the following resources for more understanding.
  

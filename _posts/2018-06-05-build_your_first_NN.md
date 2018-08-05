@@ -2,7 +2,7 @@
 layout: post
 title: Neural Networks 101  - Part 1
 subtitle: Build your first Neural network.
-published: true
+published: false
 categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
 tags: [deep learning, TensorFlow, python, neural networks]
