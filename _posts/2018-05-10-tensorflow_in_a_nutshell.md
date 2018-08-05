@@ -131,6 +131,7 @@ for training. In other words placeholder lets you inject external data to the co
 <pre><code>tensorflow_placeholder = tf.placeholder(dtype,shape=None,name=None)</code></pre>
 
 </p>
+<script src="https://gist.github.com/Ruthwik/d4c5f30329aff71722d32ecdb7cba825.js"></script>
 
 <h3>3.1.3. Model</h3> 
 <p>
@@ -146,36 +147,56 @@ In the above line we defined our linear model in which we have defined two compu
 In machine learning, error is calculated as the difference between the actual output and the predicted output.
 The function that is used to compute this error is called loss function. Different loss functions will give different 
 errors. The performance of the model depends on the loss function. One of the most widely used is mean square error, where
-loss function is calculated as the square of difference between actual value and predicted value.
-Loss measure 
-"# Mean squared error\n",
-    "cost = tf.reduce_sum(tf.pow(pred-Y, 2))/(2*n_samples)\n",
+loss function is calculated as the square of difference between actual value and predicted value which is divided by total samples.
+
+<script src="https://gist.github.com/Ruthwik/5559286bb9aa1ef0032ac115acbb1173.js"></script>
 </p>
 
 <h3>3.1.5. Optimization Method</h3> 
-<p>We will now divide the dataset into two parts for training and testing. Scikit provides <code>train_test_split(*arrays, **options)</code> to split the dataset.
-By default, test_size value is set to 0.25 and train_size value is set to 0.75. We can change these values according to our needs.
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+<p>Optimization Algorithms are used to update weights and biases i.e. the internal parameters of a model to reduce the error. We are going to use Gradient Descent optimizer to optimize our model parameters. We create our optimizer object <code>tf.train.AdamOptimizer</code> and add an optimization operation on the graph by calling minimize method on the optimizer object.
+<script src="https://gist.github.com/Ruthwik/33353b66be2aa378516cadbe7b6256f9.js"></script>
 </p>
 
-tf_graph
 <h2>3.2. Run the graph <h2>
 
-<h2>3.2.1 Session</h2> 
-<p>A Session object encapsulates the environment in which Operation objects are
-executed, and Tensor objects are evaluated.
-
-<script src="https://gist.github.com/Ruthwik/c5e09ec6b1ddf56873847071dbaff058.js"></script>
+<p>
+We have constructed the necessary componenets of the computation graph. The next step is to execute it.
 </p>
+<h3>3.2.1 Session</h3> 
+<p>A Session object encapsulates the environment in which operation objects are
+executed, and Tensor objects are evaluated.
+To execute the graph, we must initialize a Session object, and call its run method.
+
+</p>
+<h4>3.2.1.1 Create Session object</h4> 
+<p>
+There are two ways to create the session object. The two ways are as shown below.
+<script src="https://gist.github.com/Ruthwik/bd2c2c024adec3e73ff878818b4ed763.js"></script>
+</p>
+<h4>3.2.1.2 Initialize the variables</h4> 
+<p>
+We need to initialize the variables as we only assign real values to the variables once we are in a runtime 
+i.e. after a session has been created.
+<script src="https://gist.github.com/Ruthwik/e089fab9f9beeadb67882c0163337b56.js"></script>
+</p>
+
+<h4>3.2.1.3 Run the method of Session object</h4> 
+<p>
+The run method of Session object evaluates the output of a node of the graph
+</p>
+<script src="https://gist.github.com/Ruthwik/18b50facd7cf295d84dea3974016aa9c.js"></script>
 
 <h2>4. More things <h2>
 <h3>4.1 DataTypes</h3> 
-<p>Tensors have a data type in addition to shape and dimension. The following table shows the various datatypes available.
-<img src="/img/tensorflownutshell/tensor_datatypes.JPG" alt="magenta"/>
+<p>Tensors have a data type in addition to shape and dimension. 
+The following table shows the various datatypes available.
 </p>
 
+<img src="/img/tensorflownutshell/tensor_datatypes.JPG" alt="tensor_datatypes"/>
+
+
 <h3>4.2 Constants</h3> 
-<p>Constant value cannot be changed When it is sure that value is not changed, tf.consant is used. It's initialization should be with a value, not with operation.
+<p>Constant value cannot be changed once create. When it is sure that value will not change, tf.consant is used. It's initialization should be with a value, not with operation.
 <script src="https://gist.github.com/Ruthwik/b00a1dc8def5956d5420272c1a33d116.js"></script>
 </p>
 
