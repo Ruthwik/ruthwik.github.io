@@ -1,7 +1,7 @@
 ---
 layout: post
-title: TensorFlow in a Nutshell
-subtitle: Quick start to TensorFlow.
+title: Introduction to TensorFlow - Part 1
+subtitle: kick start to TensorFlow.
 published: true
 categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
