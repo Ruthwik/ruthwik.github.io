@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Introduction to TensorFlow - Part 1
-subtitle: kick start to TensorFlow.
+title: TensorFlow in a Nutshell
+subtitle: Quick start to TensorFlow.
 published: true
 categories: machinelearning
 gh-repo: Ruthwik/StockPrediction
@@ -50,7 +50,9 @@ position, force and velocity.
 for a given physical quantity?</code>
 </p>
 
->  Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. Elementary examples of such relations include the dot product, the cross product, and linear maps. Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
+> Tensors are geometric objects that describe linear relations between geometric vectors, scalars, and other tensors. 
+> Elementary examples of such relations include the dot product, the cross product, and linear maps. 
+> Geometric vectors, often used in physics and engineering applications, and scalars themselves are also tensors.
 
 <img src="/img/tensorflownutshell/tensors.png" alt="magenta"/>
 
@@ -58,7 +60,7 @@ for a given physical quantity?</code>
 A Tensor has the following properties:
 </p> 
 <img src="/img/tensorflownutshell/tensor_rank.jpg" alt="magenta"/>
-
+<p> Source: https://www.slideshare.net/BigDataSpain/tensorflow-architecture-and-use-case-nasa-space-apps-challenge-by-gema-parreo </p> 
 <p>
 The rank of a tensor is its number of dimensions.The shape of a tensor is the number of elements in each dimension
 </p>
@@ -85,6 +87,7 @@ TensorFlow internally represent the operations and performs its computation usin
 Tensorflow approaches series of computations as a flow of data through a graph with nodes being computation units and edges being flow of Tensors. 
 </p>	
 <img src="/img/tensorflownutshell/tf.gif" alt="magenta"/>
+<p> Source: tensorflow.org </p>
 <p>
 Nodes are the operations such as addition or subtraction and edges are the tensors.
 It consists of two phases
@@ -94,7 +97,8 @@ It consists of two phases
 </ul>
 </p>	
 <img src="/img/tensorflownutshell/tf_graph.png" alt="magenta"/>
-<p> Source: tensorflow.org </p>
+
+
 
 <h2>3.1. Build the graph <h2>
 
@@ -103,8 +107,9 @@ It consists of two phases
 Let's see the official documentation definition
 </p>
 > A variable maintains state in the graph across calls to run(). You add a variable to the graph by constructing an instance of the class Variable.
-
-> The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. The value can be changed using one of the assign methods.
+> The Variable() constructor requires an initial value for the variable, which can be a Tensor of any type and shape. 
+> The initial value defines the type and shape of the variable. After construction, the type and shape of the variable are fixed. 
+> The value can be changed using one of the assign methods.
 
 <p>
 Variables can be created by tf.Variable().
@@ -120,9 +125,9 @@ Most of the time you will want to create these variables as tensors of zeros, on
 <li>tf.random_uniform() #random normally distributed numbers</li>
 <li>tf.truncated_normal() 3same as random normal but doesn’t include any numbers more than 2 standard deviations.</li>
 </ul>
-
-<script src="https://gist.github.com/Ruthwik/8d780b7f42045dbbf5da28554baf3acb.js"></script>
 </p>
+<script src="https://gist.github.com/Ruthwik/8d780b7f42045dbbf5da28554baf3acb.js"></script>
+
 
 <h3>3.1.2. Placeholders</h3> 
 
@@ -165,7 +170,7 @@ minimize(cost) does two things:
 <ul>
 <li>Computes the gradient of our argument (loss node) with respect to to all the variables (weights and biases). </li>
 <li> Applies gradient updates to all those variables.</li>
-
+</ul>
 </p>
 
 <h2>3.2. Run the graph </h2>
@@ -198,7 +203,7 @@ The run method of Session object evaluates the output of a node of the graph
 </p>
 <script src="https://gist.github.com/Ruthwik/18b50facd7cf295d84dea3974016aa9c.js"></script>
 
-<h2>4. More things <h2>
+<h2>4. More Information<h2>
 <h3>4.1 DataTypes</h3> 
 <p>Tensors have a data type in addition to shape and dimension. 
 The following table shows the various datatypes available.
