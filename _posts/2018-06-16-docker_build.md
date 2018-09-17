@@ -29,7 +29,6 @@ The following are the steps to create your first docker image.
 	<li> Create a Dockerfile </li>
 	<li> Build the dockerfile to create image </li>
 	<li> Run the image to create container. </li>
->
 
 </ol>
 

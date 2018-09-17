@@ -11,7 +11,7 @@ bigimg:
 
 ---
 
-<div class="text-justify">
+
 <p>TensorFlow is a multipurpose Opensource software library for numerical computation using data flow graphs. It is originally developed by Google Brain Team to conduct deep neural networks research. TensorFlow is written in Python, C++ and CUDA. It provides stable Python API,C APIs and without backwards compatability gaurantee  C++, Go, Java, JavaScript and Swift. TensorFlow is applied in a wide variety of domains as well.The following figure shows how SketchRNN built using TensorFlow will complete your sketch in multiple ways.
 </p>
 
@@ -234,5 +234,3 @@ of Physics and Engineering</a></li>
 </p>
 <p>If you have any question or feedback, please do reach out to me by commenting below.</p>
 
-
-</div>
