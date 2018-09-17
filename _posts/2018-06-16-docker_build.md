@@ -28,7 +28,7 @@ The following are the steps to create your first docker image.
 <ol>
 	<li> Create a Dockerfile </li>
 	<li> Build the dockerfile to create image </li>
-	<li> __init__method is provided with the instance and parameter values. </li>
+	<li> Run the image to create container. </li>
 >
 
 </ol>
@@ -47,8 +47,8 @@ FROM is not found locally on the host, Docker will try to download from the Dock
 </p>
 
 ```
-# Usage: FROM [image name]
-FROM ubuntu
+	# Usage: FROM [image name]
+	FROM ubuntu
 ```
 
 <h4>MAINTAINER</h4>
@@ -57,8 +57,8 @@ This declares the author/creator of the dockerfile. This just helps for future r
 </p>
 
 ```
-# Usage: MAINTAINER [name]
-MAINTAINER authors_name
+	# Usage: MAINTAINER [name]
+	MAINTAINER authors_name
 ```
 
 <h4>RUN</h4>
@@ -68,8 +68,8 @@ Unlike CMD, it actually is used to build the image (forming another layer on top
 </p>
 
 ```
-# Usage: RUN [command]
-RUN aptitude install -y riak
+	# Usage: RUN [command]
+	RUN aptitude install -y riak
 ```
 
 <h4>CMD</h4>
@@ -78,8 +78,8 @@ The CMD is similar to RUN and can be used to execute commands. CMD is executed a
 </p>
 
 ```
-# Usage 1: CMD application "argument", "argument", ..
-CMD "echo" "Hello World!"
+	# Usage 1: CMD application "argument", "argument", ..
+	CMD "echo" "Hello World!"
 ```
 
 <h4>VOLUME</h4>
@@ -89,11 +89,11 @@ host and the containers
 </p>
 
 ```
-# Usage: VOLUME ["/dir_1", "/dir_2" ..]
-VOLUME ["/my_files"]
+	# Usage: VOLUME ["/dir_1", "/dir_2" ..]
+	VOLUME ["/my_files"]
 ```
 
-<h3>Create a Dockerfile</h3>
+<h3>1. Create a Dockerfile</h3>
 <p>
 Using a texteditor create a Dockerfile (remember without any extension)
 </p>
@@ -104,32 +104,35 @@ A base image is used to create the container image. A base image can be an offic
 ubuntu as our base image
 </p>
 ```
-# Set the base image to Ubuntu
-FROM ubuntu
+	# Set the base image to Ubuntu
+	FROM ubuntu
+	
 ```
 
 <h4>MAINTAINER/AUTHOR</h4>
 <p>
 </p>
 ```
-# File Author / Maintainer
-MAINTAINER ruthwik
+	# File Author / Maintainer
+	MAINTAINER ruthwik
+	
 ```
 
 <h4>Setting up the commands </h4>
 <p>
 </p>
 ```
-# Update the repository sources list
-RUN apt-get update
+	# Update the repository sources list
+	RUN apt-get update
 
-# Command to print
-CMD "echo" "Hello World...  from my first docker image"
+	# Command to print
+	CMD "echo" "Hello World...  from my first docker image"
+	
 ```
 <img src="/img/dockerbuild/dockerfile.png" alt="dockerfile"/>
 
 
-<h3>Build the dockerfile to create image</h3>
+<h3>2. Build the dockerfile to create image</h3>
 
 
 <p>
@@ -137,13 +140,14 @@ Use the following to create your first image
 </p>
 
 ```
-docker build -t ImageName:Tag directoryOfDocekrfile
+	docker build -t ImageName:Tag directoryOfDocekrfile
+
 ```
 
 <img src="/img/dockerbuild/dockerbuild.png" alt="dockerbuild"/>
 
 
-<h3>Run the image to create container</h3>
+<h3>3. Run the image to create container</h3>
 <p>
 </p>
 <img src="/img/dockerbuild/dockerrun.png" alt="dockerrun"/>
