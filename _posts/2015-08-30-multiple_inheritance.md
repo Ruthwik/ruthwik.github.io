@@ -3,7 +3,7 @@ layout: post
 title: Multiple Inheritance in C++
 subtitle: Best way to inherit.
 published: true
-categories: kaggle
+categories: other
 tags: [C++, Diamond problem, explicit scoping., Inheritance, Multiple Inheritance, Virtual Base class]
 
 bigimg:

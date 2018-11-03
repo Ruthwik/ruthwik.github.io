@@ -3,7 +3,7 @@ layout: post
 title: Dynamic Memory allocation in C and C++
 subtitle: Save your memory.
 published: true
-categories: kaggle
+categories: other
 tags: [C, C++, Dynamic Memory allocation of 2D array in C++, Dynamic Memory allocation.]
 
 bigimg:

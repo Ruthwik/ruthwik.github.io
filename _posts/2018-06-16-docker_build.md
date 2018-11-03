@@ -3,7 +3,7 @@ layout: post
 title: Building a Docker image 
 subtitle: First Docker image.
 published: true
-categories: kaggle
+categories: other
 tags: [docker, containerization]
 
 bigimg:
