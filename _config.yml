@@ -25,7 +25,7 @@ description: Blog
 navbar-links:
   Home: home
   Machine Learning: MLblog
-  Other: otherblog
+  Other: other
   More:
     - Skills By Tech: infographic
     - tags: tags
