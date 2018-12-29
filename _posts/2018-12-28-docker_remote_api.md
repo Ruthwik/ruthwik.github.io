@@ -64,7 +64,7 @@ The above explanation gives better intution about how Docker Remote API works. I
 
 <pre><code>ps -ef | grep docker</code></pre>
 
-If there is a service with <code>/usr/bin/dockerd -H=fd:// -H=tcp://0.0.0.0:2375 </code> then the next steps can be skipped. Generally for the first time it has to be configure and the output looks like </li>
+If there is a service with <code>/usr/bin/dockerd -H=fd:// -H=tcp://0.0.0.0:2375 </code> then the next steps can be skipped. Generally for the first time it has to be configured and the output looks like </li>
 
 <img src="/img/dockerremoteapi/docker_deamon.png" alt="docker_deamon"/>
 
@@ -77,25 +77,24 @@ If there is a service with <code>/usr/bin/dockerd -H=fd:// -H=tcp://0.0.0.0:2375
 
 
 
-	> The -H flag binds dockerd to a listening socket, either a Unix socket or a TCP port. You can specify multiple -H flags to bind to multiple sockets/ports. The default -H fd:// uses systemd's socket activation feature to refer to /lib/systemd/system/docker.socket.
 	
 
 	<li> Reload the docker daemon
-			<pre><code>systemctl daemon-reload </code></pre>
+			
 	</li>
-	
+	<pre><code>systemctl daemon-reload </code></pre>
 		<li> Restart the container
-			<pre><code>sudo service docker restart </code></pre>
+			
 	</li>
-
+	<pre><code>sudo service docker restart </code></pre>
 		<li> The last step is to check whether the changes are reflected using the same command
-			<pre><code>ps -ef | grep docker</code></pre>
+			
 	</li>
-	
+	<pre><code>ps -ef | grep docker</code></pre>
 		<img src="/img/dockerremoteapi/docker_service_after.png" alt="docker_service_after"/>
 	
 </ul> 
 </p>
-
+> The -H flag binds dockerd to a listening socket, either a Unix socket or a TCP port. You can specify multiple -H flags to bind to multiple sockets/ports. The default -H fd:// uses systemd's socket activation feature to refer to /lib/systemd/system/docker.socket.
 <p>If you have any question or feedback, please do reach out to me by commenting below.</p>
 
