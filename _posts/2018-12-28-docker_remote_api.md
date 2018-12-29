@@ -45,7 +45,7 @@ The Docker architecture is anologous to client-server architecture. The daemon i
 Now let's look at each component of a docker ecosystem : 
 
 <ul>
-	<li> Client : This is where we run the docker commands. It can be CLI or REST API. We generally install CLI on our operating system to run the commands. </li>
+	<li> <strong><em>Client :</em></strong> This is where we run the docker commands. It can be CLI or REST API. We generally install CLI on our operating system to run the commands. </li>
 	<li> Docker host : This is typically referred to as the server running the Docker daemon. The client and daemon need not to be on the same machine.. </li>
 	<li> Registry : Docker registry is a storage and content delivery system holding Docker images available in different tagged version. docker push and
  pull commands are used to interact with registry. We can create our own local registry if we wish to maintain. We can will explore this 
