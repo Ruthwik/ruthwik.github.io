@@ -7,7 +7,7 @@ categories: other
 tags: [docker, containerization]
 
 bigimg:
-  - /img/dockerremoteapi/dockerremoteapi.jpg
+  - /img/dockerremoteapi/dockerremoteapi.jpeg
 
 ---
 
@@ -39,7 +39,7 @@ along with docker daemon when docker is installed. </li>
 The Docker architecture is anologous to client-server architecture. The daemon is the server and the CLI is one of many clients.
 </p>
 
-<img src="/img/dockerremoteapi/docker_steps.jpg" alt="docker_steps"/>
+<img src="/img/dockerremoteapi/docker_steps.png" alt="docker_steps"/>
 
 <p>
 Now let's look at each component of a docker ecosystem : 
@@ -52,8 +52,6 @@ Now let's look at each component of a docker ecosystem :
  in the later posts. </li>
 
 </ul>
-
-
 
 
 
