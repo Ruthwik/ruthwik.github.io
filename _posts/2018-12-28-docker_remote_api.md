@@ -13,7 +13,7 @@ bigimg:
 
 
 <p>
-In the previous post Building a Docker image, we saw basic commands to create a docker image. In this post we will look at docker remote api's.
+In the previous post, we saw the basic commands to create a docker image. In this post we will look at docker remote api's.
 </p>
 
 <h3>Understanding Docker Architecture</h3>
@@ -136,7 +136,7 @@ This is to get list of containers created on the docker machine.
 
 <h4>3. Pull an image</h4>
 <p>
-
+This is 
 <pre><code>curl -XPOST http://localhost:2375/images/create?fromImage=tomcat:9.0</code></pre>
 
 
