@@ -16,13 +16,13 @@ bigimg:
 <p>
 <code>Serialization</code> is the process of converting an object into a stream of bytes to store the object or tranfer over a network. Its main purpose is to save the state of an object in order to be able to recreate it when needed. The reverse process is called deserialization. There are various ways to achieve serialization/deserialization like JSON, XML, Avro or in Java using Serializable interface. This post is about Protocol Buffers which started gaining popularity in the recent years for its efficient serialization and deserialization.
 </p>
-<img src="/img/dockerremoteapi/docker_core.jpg" alt="serialization" height="50%" width="50%">
+<img src="/img/protobuf/docker_core.jpg" alt="serialization" height="50%" width="50%">
 <p>
 
 <h3>Protocol Buffers</h3>
 Protocol Buffers are developed by Google. It is an extensible serialization technique for the structured data. Once the structured data is defined, then source code can be generated to easily read and write the data using variety of languages. The main adavantage of using protobuf is backaward and forward compatibility.
 
-<img src="/img/dockerremoteapi/docker_core.jpg" alt="proto" height="50%" width="50%">
+<img src="/img/protobuf/docker_core.jpg" alt="proto" height="50%" width="50%">
 
 Specify the structured data that you want to serialize by defining protocol buffer message types in .proto specification file. Each protocol buffer message is a small logical record of information.
 From the proto file, the protocol buffer compiler will generate a class that can be used in an application to serialize and deserialize.
@@ -117,13 +117,13 @@ the default value shouldn't have any meaning in the business.
 <p>The tag number ensures the forward and the backward compatibility. After adding a new field,
 if it is sent to old, the old code will not know what the tag numbers corresponds to and the field will be ignored or dropped. This ensures backward compatibility. Oppositely, if we read the old data with the new code, the new field will not be found and the default value will be assumed (empty string, empty list etc...).
 </p>
-<img src="/img/dockerremoteapi/docker_core.jpg" alt="add_fields" height="50%" width="50%">
+<img src="/img/protobuf/docker_core.jpg" alt="add_fields" height="50%" width="50%">
 
 <h4>Renaming Fields</h4>
 <p>The field names can be changed freely. The tag number is the most important in protobuf.
 </p>
 
-<img src="/img/dockerremoteapi/docker_core.jpg" alt="rename_field" height="50%" width="50%">
+<img src="/img/protobuf/docker_core.jpg" alt="rename_field" height="50%" width="50%">
 
 <h4>Removing Fields</h4>
 <p>A field can be removed when it is not required anymore. If the old code doesn't find the field anymore, the default will be used. Oppositely, if we read the old data with the new code, the deleted dield will be just be dropped.
