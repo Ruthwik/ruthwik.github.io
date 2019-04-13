@@ -3,8 +3,7 @@ layout: post
 title: Protocol Buffers 101
 subtitle: Under Contruction.
 published: true
-categories: other```
-```
+categories: other
 tags: [protobuff, gRPC]
 
 bigimg:
