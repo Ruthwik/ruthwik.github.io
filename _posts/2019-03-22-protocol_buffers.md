@@ -32,7 +32,7 @@ From the proto file, the protocol buffer compiler will generate a class that can
 
 <h3>1.1 Basics: Defining the first message</h3>
 
-<img src="/img/protobuf/proto_message.png" alt="proto" height="50%" width="50%">
+<img src="/img/protobuf/proto_message.png" alt="proto" height="100%" width="100%">
 
 <h4>1.1.1 Types</h4>
 <p>The complete list of message types in details can be found <a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">here.</a>
