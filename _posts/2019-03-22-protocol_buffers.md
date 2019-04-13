@@ -15,13 +15,13 @@ bigimg:
 <p>
 <code>Serialization</code> is the process of converting an object into a stream of bytes to store the object or tranfer over a network. Its main purpose is to save the state of an object in order to be able to recreate it when needed. The reverse process is called deserialization. There are various ways to achieve serialization/deserialization like JSON, XML, Avro or in Java using Serializable interface. This post is about Protocol Buffers which started gaining popularity in the recent years for its efficient serialization and deserialization.
 </p>
-<img src="/img/protobuf/serialization.png" alt="serialization" height="50%" width="50%">
+<img src="/img/protobuf/serialization.png" alt="serialization" height="100%" width="100%">
 <p>
 
 <h3>1 Protocol Buffers</h3>
 Protocol Buffers are developed by Google. It is an extensible serialization technique for the structured data. Once the structured data is defined, then source code can be generated to easily read and write the data using variety of languages. The main adavantage of using protobuf is backaward and forward compatibility.
 
-<img src="/img/protobuf/protobuf.png" alt="proto" height="50%" width="50%">
+<img src="/img/protobuf/protobuf.png" alt="proto" height="100%" width="100%">
 
 Specify the structured data that you want to serialize by defining protocol buffer message types in .proto specification file. Each protocol buffer message is a small logical record of information.
 From the proto file, the protocol buffer compiler will generate a class that can be used in an application to serialize and deserialize.
