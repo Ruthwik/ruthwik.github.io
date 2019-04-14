@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Protocol Buffers 101
-subtitle: Under Contruction.
+subtitle: serialize with efficacy.
 published: true
 categories: other
 tags: [protobuff, gRPC ,serialization]
@@ -135,13 +135,11 @@ the default value shouldn't have any meaning in the business.
 <p>The tag number ensures the forward and the backward compatibility. After adding a new field,
 if it is sent to old, the old code will not know what the tag numbers corresponds to and the field will be ignored or dropped. This ensures backward compatibility. Oppositely, if we read the old data with the new code, the new field will not be found and the default value will be assumed (empty string, empty list etc...).
 </p>
-<img src="/img/protobuf/docker_core.jpg" alt="add_fields" height="50%" width="50%">
 
 <h4>1.2.2 Renaming Fields</h4>
 <p>The field names can be changed freely. The tag number is the most important in protobuf.
 </p>
 
-<img src="/img/protobuf/docker_core.jpg" alt="rename_field" height="50%" width="50%">
 
 <h4>1.2.3 Removing Fields</h4>
 <p>A field can be removed when it is not required anymore. If the old code doesn't find the field anymore, the default will be used. Oppositely, if we read the old data with the new code, the deleted dield will be just be dropped.
@@ -244,7 +242,7 @@ message Student{
 The following shows a simple .proto file which has two messages <code>HelloRequest</code> and <code>HelloResponse</code>.  
 </p>
 
-<img src="/img/protobuf/proto_file.jpg" alt="example_proto" height="100%" width="100%">
+<img src="/img/protobuf/proto_file.jpg" alt="example_proto" height="70%" width="70%">
 
 <h4>1.4.2 Compiling the Protocol Buffers</h4>
 <p>
@@ -252,23 +250,27 @@ The steps to compile are as follows
 <ul>
 	<li>Download the Protocol Compiler from <a href="https://github.com/protocolbuffers/protobuf/releases/">here.</a></li>
 	<li>Set the path to protoc or you can mention the path everytime you compile the code using --<code>proto_path=IMPORT_PATH</code> </li>
+  <li>Go to .proto file folder and run the folowing command. we are using --java_out for Java files as output. Other options are --python_out,--cpp_out...</li>
+  </ul>
+
+  </p>
 
   ```
+
    echo 'export PATH="$PATH":/home/user/Documents/softwares/protoc-3.7.1-linux-x86_64/bin' >> ~/.bashrc
 
   ```
 
 
-  <li>Go to .proto file folder and run the folowing command. we are using --java_out for Java files as output. Other options are --python_out,--cpp_out...</li>
+
 
   ```
+
     protoc --java_out=../java greeting.proto
 
   ```
 
-</ul>
 
-</p>
 
 
 
