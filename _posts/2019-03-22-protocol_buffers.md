@@ -242,7 +242,7 @@ message Student{
 The following shows a simple .proto file which has two messages <code>HelloRequest</code> and <code>HelloResponse</code>.  
 </p>
 
-<img src="/img/protobuf/proto_file.jpg" alt="example_proto" height="100%" width="100%">
+<img src="/img/protobuf/proto_file.jpg" alt="example_proto" height="70%" width="70%">
 
 <h4>1.4.2 Compiling the Protocol Buffers</h4>
 <p>
