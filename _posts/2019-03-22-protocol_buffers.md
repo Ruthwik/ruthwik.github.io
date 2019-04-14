@@ -35,7 +35,7 @@ From the proto file, the protocol buffer compiler will generate a class that can
 <img src="/img/protobuf/proto_message.png" alt="proto" height="100%" width="100%">
 
 <h4>1.1.1 Types</h4>
-<p>The complete list of message types in details can be found <a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">here.</a>
+<p>The complete list of message types in detail can be found <a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">here.</a>
 
 The following are some of the types the can be used.
 
@@ -46,7 +46,7 @@ The following are some of the types the can be used.
   <li> <strong><em>Bytes :</em></strong> 'bytes' is used for any sequence of byte array.</li>
 </ul></p>
 <p><strong><em>Importing types</em></strong></p>
-<p>Types can be imported defined in a different .proto files or when you want to use re-use code and import other .proto files created by people
+<p>Types can be imported in a different .proto files or when you want to re-use the code and import other .proto files created by people
 </p>
 
 ```Java
@@ -172,16 +172,70 @@ message Student{
 </p>
 <h4>1.3.1 Oneof</h4>
 <p>
+Oneof is used when you want to set oneof the fields. The field that is set will contain a value and rest of the fields will be null. Oneof fields cannot be repeated.
+</p>
+
+```Java
+
+message Student{
+  int32 student_id = 1;
+  oneof language_course{
+    string lang_eng = 2;
+    string lang_fre = 3;
+  }
+}
+
+```
+<p>
+In the above example, you can either set lang_eng or lang_fre. I will create a separate post for a better understanding of oneof.
 </p>
 <h4>1.3.2 Maps</h4>
 <p>
+Maps are used to store key value pairs like in any other programming languages. A map
+cannot be repeated. The following is an example of map.
+
+```Java
+
+message Student{
+  int32 student_id = 1;
+  map<string,string> additional_info;
+}
+
+```
+
 </p>
 <h4>1.3.3 Timestamp</h4>
 <p>
+Protocol Buffers contain a set of well known types. One of the types is Timestamp.
+Its fields are seconds and nanoseconds. We have to explicity import the Timestamp type.
 </p>
+
+```Java
+
+import "google/protobuf/timestamp.proto";
+
+message Student{
+  google.protobuf.Timestamp last_updated = 1;;
+}
+
+```
+
 <h4>1.3.4 Duration</h4>
 <p>
+It is another well known type. It represents the time span between two timestamps.
+It contains seconds and nanoseconds just like Timestamp.
 </p>
+
+```Java
+
+import "google/protobuf/duration.proto";
+
+message Student{
+  google.protobuf.Duration validity = 1;;
+}
+
+```
+
 <h3>1.4 Example</h3>
 <p>
 </p>
