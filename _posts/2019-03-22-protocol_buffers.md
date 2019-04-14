@@ -231,7 +231,7 @@ It contains seconds and nanoseconds just like Timestamp.
 import "google/protobuf/duration.proto";
 
 message Student{
-  google.protobuf.Duration validity = 1;;
+  google.protobuf.Duration validity = 1;
 }
 
 ```
@@ -241,10 +241,36 @@ message Student{
 </p>
 <h4>1.4.1 Defining the Protocol Buffers</h4>
 <p>
+The following shows a simple .proto file which has two messages <code>HelloRequest</code> and <code>HelloResponse</code>.  
 </p>
+
+<img src="/img/protobuf/proto_file.jpg" alt="example_proto" height="100%" width="100%">
+
 <h4>1.4.2 Compiling the Protocol Buffers</h4>
 <p>
+The steps to compile are as follows
+<ul>
+	<li>Download the Protocol Compiler from <a href="https://github.com/protocolbuffers/protobuf/releases/">here.</a></li>
+	<li>Set the path to protoc or you can mention the path everytime you compile the code using --<code>proto_path=IMPORT_PATH</code> </li>
+
+  ```
+   echo 'export PATH="$PATH":/home/user/Documents/softwares/protoc-3.7.1-linux-x86_64/bin' >> ~/.bashrc
+
+  ```
+
+
+  <li>Go to .proto file folder and run the folowing command. we are using --java_out for Java files as output. Other options are --python_out,--cpp_out...</li>
+
+  ```
+    protoc --java_out=../java greeting.proto
+
+  ```
+
+</ul>
+
 </p>
+
+
 
 <p>
 I have used the following references and sometimes used the same explanation. Do check the following resources for more understanding.
