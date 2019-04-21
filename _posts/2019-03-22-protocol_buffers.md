@@ -19,7 +19,7 @@ bigimg:
 <p>
 
 <h3>1 Protocol Buffers</h3>
-Protocol Buffers are developed by Google. It is an extensible serialization technique for the structured data. Once the structured data is defined, then source code can be generated to easily read and write the data using variety of languages. The main adavantage of using protobuf is backaward and forward compatibility.
+Protocol Buffers are developed by Google. It is an extensible serialization technique for the structured data. Once the structured data is defined, then source code can be generated to easily read and write the data using variety of languages. The main advantage of using protobuf is backaward and forward compatibility.
 
 <img src="/img/protobuf/protobuf.png" alt="proto" height="100%" width="100%">
 
@@ -37,7 +37,7 @@ From the proto file, the protocol buffer compiler will generate a class that can
 <h4>1.1.1 Types</h4>
 <p>The complete list of message types in detail can be found <a href="https://developers.google.com/protocol-buffers/docs/proto#scalar">here.</a>
 
-The following are some of the types the can be used.
+The following are some of the types that can be used.
 
 <ul>
 	<li> <strong><em>Number :</em></strong> double,float, int32 ,int64, unit32 ..... are used as field type</li>
@@ -189,8 +189,9 @@ In the above example, you can either set lang_eng or lang_fre. I will create a s
 </p>
 <h4>1.3.2 Maps</h4>
 <p>
-Maps are used to store key value pairs like in any other programming languages. A map
-cannot be repeated. The following is an example of map.
+Maps are used to store key value pairs like in any other programming languages. A map cannot be repeated. The following is an example of map.
+
+</p>
 
 ```Java
 
@@ -201,7 +202,6 @@ message Student{
 
 ```
 
-</p>
 <h4>1.3.3 Timestamp</h4>
 <p>
 Protocol Buffers contain a set of well known types. One of the types is Timestamp.
@@ -270,7 +270,9 @@ The steps to compile are as follows
 
   ```
 
-
+<p>
+The github project for this example can be found [here](https://github.com/Ruthwik/Protocol-Buffers/tree/master/protobuf-simple-tutorial).
+</p>
 
 
 
