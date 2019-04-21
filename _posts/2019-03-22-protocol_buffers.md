@@ -270,9 +270,9 @@ The steps to compile are as follows
 
   ```
 
-<p>
+
 The github project for this example can be found [here](https://github.com/Ruthwik/Protocol-Buffers/tree/master/protobuf-simple-tutorial).
-</p>
+
 
 
 
