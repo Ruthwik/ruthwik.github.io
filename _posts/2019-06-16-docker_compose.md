@@ -41,13 +41,13 @@ The steps from 3 show how to install docker-compose. For those who already have 
 ```
 	docker-compose --version
 ```
-<img src="/img/dockercompose/version.jpg" alt="docker_version" height="50%" width="50%">
+<img src="/img/dockercompose/version.jpg" alt="docker_version" height="85%" width="72%">
 
 ```
 	sudo apt-get remove docker-compose
 ```
 
-<img src="/img/dockercompose/docker_remove.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/dockercompose/docker_remove.jpg" alt="docker_core" height="100%" width="100%">
 
 <h4>Step 2: Download and install </h4>
 
@@ -55,7 +55,7 @@ The steps from 3 show how to install docker-compose. For those who already have 
 ```
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
-<img src="/img/dockercompose/dockercompose_download.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/dockercompose/dockercompose_download.jpg" alt="docker_core" height="85%" width="98%">
 
 
 <p>
@@ -75,7 +75,7 @@ Give all permissions
 ```
 	docker-compose --version
 ```
-<img src="/img/dockercompose/dockercompose_permission.jpg" alt="dockercompose_permission" height="50%" width="50%">
+<img src="/img/dockercompose/dockercompose_permission.jpg" alt="dockercompose_permission" height="93%" width="85%">
 
 
 <h3>Creating the first docker-compose file</h3>
@@ -90,7 +90,7 @@ Check for the hello world image using docker command.
 
 ```
 
-<img src="/img/dockercompose/images.jpg" alt="images" height="50%" width="50%">
+<img src="/img/dockercompose/images.jpg" alt="images" height="95%" width="85%">
 </p>
 
 
@@ -104,7 +104,7 @@ Use this command to run the docker image. A default network is created in case w
 	docker-compose up
 
 ```
-<img src="/img/dockercompose/docker_compose_up.jpg" alt="dockercompose_up" height="50%" width="50%">
+<img src="/img/dockercompose/docker_compose_up.jpg" alt="dockercompose_up" height="95%" width="85%">
 
 <h4>Run the docker-compose in a background mode</h4>
 This command help to run the containers in a silent mode.
