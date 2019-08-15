@@ -7,7 +7,7 @@ categories: machinelearning
 tags: [GPU, TensorFlow]
 
 bigimg:
-  - /img/install_tensorflow_gpu/tensorflowimage.jpg
+  - /img/tensorflownutshell/tensorflowimage.jpg
 
 ---
 
@@ -22,22 +22,23 @@ All the Prerequisites required before starting the installation.
 <ul>
 <li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong>
 
+
   ```
-  sudo apt update && sudo apt install gcc
+    sudo apt update && sudo apt install gcc
 
   ```
 
-  <img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="50%" width="50%">
+  <img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%">
   </li>
 
   <li> <strong><em>Install build-essential package</em></strong>
 
   ```
-  sudo apt update && sudo apt install build-essential
+    sudo apt update && sudo apt install build-essential
 
   ```
 
-  <img src="/img/install_tensorflow_gpu/essential.jpg" alt="docker_core" height="50%" width="50%">
+  <img src="/img/install_tensorflow_gpu/essential.jpg" alt="docker_core" height="85%" width="100%">
   </li>
 
   <li> <strong><em>Install OpenGL Utility Toolkit (FreeGlut) and X11 Input extension library</em></strong>
@@ -69,7 +70,7 @@ I used the following commands to install as it easy and simple.
 
 If everything goes well after firing these commands, then reboot your machine. The status of Nvidia GPU can be checked with the <code>nvidia-smi</code>.
 
-<img src="/img/install_tensorflow_gpu/nvidia_smi.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/nvidia_smi.jpg" alt="docker_core" height="85%" width="100%">
 
 </p>
 
@@ -93,7 +94,7 @@ I installed using runfile as I need to set the PATH after installation. I need t
 
 <h4>1. Download the NVIDIA® CUDA® Toolkit from [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)</h4>
 <p>
-<img src="/img/install_tensorflow_gpu/cuda_toolkit.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/cuda_toolkit.jpg" alt="docker_core" height="85%" width="100%">
 
 </p>
 
@@ -185,14 +186,14 @@ Add the path in .bashrc file:
   nvcc -V
 
   ```
-<img src="/img/install_tensorflow_gpu/nvcc.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/nvcc.jpg" alt="docker_core" height="85%" width="100%">
 </p>
 
 <h3>Level 3: Installing cuDNN</h3>
 <p>
 Please head over to the NVIDIA cuDNN website and click on the green Download cuDNN button. Unfortunately, you have to register for the NVIDIA Developer Program. Once you are registered, go to the NVIDIA cuDNN website and fill in the survey to reach the download page.
 
-<img src="/img/install_tensorflow_gpu/cuDNN_download.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/cuDNN_download.jpg" alt="docker_core" height="85%" width="100%">
 
 
 ```
@@ -204,7 +205,7 @@ Please head over to the NVIDIA cuDNN website and click on the green Download cuD
   sudo dpkg -i libcudnn7-doc_7.6.2.24-1+cuda10.1_amd64.deb
 
 ```
-<img src="/img/install_tensorflow_gpu/cuDNN.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/cuDNN.jpg" alt="docker_core" height="85%" width="100%">
 
 </p>
 
@@ -223,7 +224,7 @@ Please head over to the NVIDIA cuDNN website and click on the green Download cuD
 
 ```
 
-<img src="/img/install_tensorflow_gpu/cudaa_test.jpg" alt="docker_core" height="50%" width="50%">
+<img src="/img/install_tensorflow_gpu/cudaa_test.jpg" alt="docker_core" height="85%" width="100%">
 
 </p>
 
