@@ -233,7 +233,8 @@ Please head over to the NVIDIA cuDNN website and click on the green Download cuD
 <p>
 This can be done in two ways one by using pip and another by using conda if you want to use anaconda.
 
-```
+
+~~~
 
   sudo apt install virtualenv
 
@@ -247,17 +248,31 @@ This can be done in two ways one by using pip and another by using conda if you 
 
   pip install tensorflow-gpu
 
-```
+~~~
+
 </p>
 
 <h4>Verify TensorFlow installation</h4>
 <p>
 
 ```
+
   python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
 
 ```
 
+<img src="/img/install_tensorflow_gpu/terminal.jpg" alt="docker_core" height="85%" width="100%">
+</p>
+<p>
 
 </p>
+```
+  conda info
+  conda install tensorflow-gpu
+  anaconda-navigator
+
+```
+
+<img src="/img/install_tensorflow_gpu/conda.jpg" alt="docker_core" height="85%" width="100%">
+
 <p>If you have any question or feedback, please do reach out to me by commenting below.</p>
