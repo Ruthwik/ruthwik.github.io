@@ -58,7 +58,8 @@ All the Prerequisites required before starting the installation.
 
 
 <p>
-The driver can be either downloaded from [here.](https://www.nvidia.com/Download/index.aspx?lang=en-us)
+The driver can be either downloaded from <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us">here.</a>
+
 I used the following commands to install as it easy and simple.
 
 ```
@@ -92,7 +93,8 @@ I installed using runfile as I need to set the PATH after installation. I need t
 
 
 
-<h4>1. Download the NVIDIA® CUDA® Toolkit from [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)</h4>
+<h4>1. Download the NVIDIA® CUDA® Toolkit from <a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal">here.</a></h4>
+
 <p>
 <img src="/img/install_tensorflow_gpu/cuda_toolkit.jpg" alt="docker_core" height="85%" width="100%">
 
@@ -165,27 +167,17 @@ I installed using runfile as I need to set the PATH after installation. I need t
 
 Add the path in .bashrc file:
 
-```
-  sudo nano ~/.bashrc
+<script src="https://gist.github.com/Ruthwik/5336a981323477878b6c90841f186c9c.js"></script>
 
-  export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
-
-  export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-  source ~/.bashrc
-
-```
 </p>
 
 <h4>Verify the installation of NVIDIA’s CUDA Toolkit 10 compiler driver</h4>
-<p>
-
 
   ```
-
   nvcc -V
 
   ```
+<p>
 <img src="/img/install_tensorflow_gpu/nvcc.jpg" alt="docker_core" height="85%" width="100%">
 </p>
 
@@ -256,7 +248,6 @@ This can be done in two ways one by using pip and another by using conda if you 
 <p>
 
 ```
-
   python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
 
 ```
@@ -266,6 +257,7 @@ This can be done in two ways one by using pip and another by using conda if you 
 <p>
 
 </p>
+
 ```
   conda info
   conda install tensorflow-gpu
