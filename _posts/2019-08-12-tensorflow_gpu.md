@@ -22,19 +22,18 @@ All the Prerequisites required before starting the installation.
 <ul>
 <li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong>  </li>
 
-<code>  sudo apt update && sudo apt install gcc </code>
+<code>  sudo apt update && sudo apt install gcc </code><br>
 
-<img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%">
+<img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%"><br>
 
-</li>
   <li> <strong><em>Install build-essential package</em></strong>  </li>
 
   <code>
     sudo apt update && sudo apt install build-essential
 
-  </code>
+  </code><br>
 
-  <img src="/img/install_tensorflow_gpu/essential.jpg" alt="docker_core" height="85%" width="100%">
+  <img src="/img/install_tensorflow_gpu/essential.jpg" alt="docker_core" height="85%" width="100%"><br>
 
 
   <li> <strong><em>Install OpenGL Utility Toolkit (FreeGlut) and X11 Input extension library</em></strong>  </li>
@@ -66,7 +65,7 @@ I used the following commands to install as it easy and simple.</p>
 </code>
 </p>
 <p>
-If everything goes well after firing these commands, then reboot your machine. The status of Nvidia GPU can be checked with the <code>nvidia-smi</code>.
+If everything goes well after firing these commands, then reboot your machine. The status of Nvidia GPU can be checked with the <code>nvidia-smi</code>.<br>
 
 <img src="/img/install_tensorflow_gpu/nvidia_smi.jpg" alt="docker_core" height="85%" width="100%">
 
@@ -165,10 +164,9 @@ Add the path in .bashrc file:
 
 <h4>Verify the installation of NVIDIA’s CUDA Toolkit 10 compiler driver</h4>
 
-  ```
+  <code>
   nvcc -V
-
-  ```
+  </code><br>
 <p>
 <img src="/img/install_tensorflow_gpu/nvcc.jpg" alt="docker_core" height="85%" width="100%">
 </p>
@@ -177,18 +175,20 @@ Add the path in .bashrc file:
 <p>
 Please head over to the NVIDIA cuDNN website and click on the green Download cuDNN button. Unfortunately, you have to register for the NVIDIA Developer Program. Once you are registered, go to the NVIDIA cuDNN website and fill in the survey to reach the download page.
 
-<img src="/img/install_tensorflow_gpu/cuDNN_download.jpg" alt="docker_core" height="85%" width="100%">
+<img src="/img/install_tensorflow_gpu/cuDNN_download.jpg" alt="docker_core" height="85%" width="100%"><br>
 
 
-```
+<code>
 
   sudo dpkg -i libcudnn7_7.6.2.24-1+cuda10.1_amd64.deb
-
+</code><br>
+<code>
   sudo dpkg -i libcudnn7-dev_7.6.2.24-1+cuda10.1_amd64.deb
+</code><br>
+<code>
+  sudo dpkg -i libcudnn7-doc_7.6.2.24-1+cuda10.1_amd64.deb=
+</code><br>
 
-  sudo dpkg -i libcudnn7-doc_7.6.2.24-1+cuda10.1_amd64.deb
-
-```
 <img src="/img/install_tensorflow_gpu/cuDNN.jpg" alt="docker_core" height="85%" width="100%">
 
 </p>
@@ -196,17 +196,7 @@ Please head over to the NVIDIA cuDNN website and click on the green Download cuD
 <h4>Verify the installation of NVIDIA’s CUDA Toolkit 10 compiler driver</h4>
 <p>
 
-```
-
-  cp -r /usr/src/cudnn_samples_v7/ $HOME
-
-  cd $HOME/cudnn_samples_v7/mnistCUDNN
-
-  make clean && make
-
-  ./mnistCUDNN
-
-```
+<script src="https://gist.github.com/Ruthwik/74e34834a52328f21a1c8ebf8caf0c88.js"></script>
 
 <img src="/img/install_tensorflow_gpu/cudaa_test.jpg" alt="docker_core" height="85%" width="100%">
 
@@ -217,45 +207,23 @@ Please head over to the NVIDIA cuDNN website and click on the green Download cuD
 <p>
 This can be done in two ways one by using pip and another by using conda if you want to use anaconda.
 
-
-~~~
-
-  sudo apt install virtualenv
-
-  virtualenv --system-site-packages -p python3 ./venv
-
-  source ./venv/bin/activate
-
-  pip install --upgrade pip
-
-  pip list
-
-  pip install tensorflow-gpu
-
-~~~
+<h4>Using PIP</h4>
+<script src="https://gist.github.com/Ruthwik/95bb2a4cf2b3b8b3e1a23e06455824ca.js"></script>
 
 </p>
 
 <h4>Verify TensorFlow installation</h4>
 <p>
 
-```
+<code>
   python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
+<code><br>
 
-```
-
+<h4>Using Conda</h4>
 <img src="/img/install_tensorflow_gpu/terminal.jpg" alt="docker_core" height="85%" width="100%">
 </p>
-<p>
 
-</p>
-
-```
-  conda info
-  conda install tensorflow-gpu
-  anaconda-navigator
-
-```
+<script src="https://gist.github.com/Ruthwik/95bd4adb18f58acd5e93ea0a0f67013e.js"></script><br>
 
 <img src="/img/install_tensorflow_gpu/conda.jpg" alt="docker_core" height="85%" width="100%">
 
