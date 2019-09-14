@@ -20,33 +20,29 @@ The first thing that I did after I bought a laptop with NVIDIA GPU was to instal
 All the Prerequisites required before starting the installation.
 
 <ul>
-<li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong></li>
+<li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong>  </li>
 
-  ```
-    sudo apt update && sudo apt install gcc
+<code>  sudo apt update && sudo apt install gcc </code>
 
-  ```
 <img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%">
 
+</li>
+  <li> <strong><em>Install build-essential package</em></strong>  </li>
 
-  <li> <strong><em>Install build-essential package</em></strong>
-
-  ```
+  <code>
     sudo apt update && sudo apt install build-essential
 
-  ```
+  </code>
 
   <img src="/img/install_tensorflow_gpu/essential.jpg" alt="docker_core" height="85%" width="100%">
-  </li>
 
-  <li> <strong><em>Install OpenGL Utility Toolkit (FreeGlut) and X11 Input extension library</em></strong>
 
-  ```
+  <li> <strong><em>Install OpenGL Utility Toolkit (FreeGlut) and X11 Input extension library</em></strong>  </li>
+
+  <code>
   sudo apt update && sudo apt install freeglut3 freeglut3-dev libxi-dev libxmu-dev
+  </code>
 
-  ```
-
-  </li>
 
 </ul>
 
@@ -59,13 +55,16 @@ All the Prerequisites required before starting the installation.
 The driver can be either downloaded from <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us">here.</a>
 
 I used the following commands to install as it easy and simple.</p>
-
-```
+<p>
+<code>
   sudo apt update
-
+</code>
+</p>
+<p>
+<code>
   sudo ubuntu-drivers autoinstall
-
-```
+</code>
+</p>
 <p>
 If everything goes well after firing these commands, then reboot your machine. The status of Nvidia GPU can be checked with the <code>nvidia-smi</code>.
 
@@ -79,7 +78,7 @@ If everything goes well after firing these commands, then reboot your machine. T
 
 
 
-> CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia. The NVIDIA® CUDA® Toolkit provides a development environment for creating high-performance GPU-accelerated applications. With the CUDA Toolkit, you can develop, optimize and deploy your applications on GPU-accelerated embedded systems, desktop workstations, enterprise data centers, cloud-based platforms and HPC supercomputers. The toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler and a runtime library to deploy your application.
+>  CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia. The NVIDIA® CUDA® Toolkit provides a development environment for creating high-performance GPU-accelerated applications. With the CUDA Toolkit, you can develop, optimize and deploy your applications on GPU-accelerated embedded systems, desktop workstations, enterprise data centers, cloud-based platforms and HPC supercomputers. The toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler and a runtime library to deploy your application.
 
 
 
@@ -105,58 +104,53 @@ I installed using runfile as I need to set the PATH after installation. I need t
 <h4>3. Unload nvidia-drm before proceeding</h4>
 <p>
 <ul>
-<li> <strong><em>Isolate multi-user.target</em></strong>
+<li> <strong><em>Isolate multi-user.target</em></strong>  </li>
 
-  ```
+  <code>
   sudo systemctl isolate multi-user.target
-
-  ```
-  </li>
+  </code>
 
   <li> <strong><em>Check for nvidia-drm in use</em></strong>
+    </li>
 
-  ```
+  <code>
   lsmod | grep nvidia.drm
 
-  ```
+  </code>
 
-  </li>
 
-  <li> <strong><em>Unload nvidia-drm</em></strong>
+  <li> <strong><em>Unload nvidia-drm</em></strong>  </li>
 
-  ```
+  <code>
   sudo modprobe -r nvidia-drm
 
-  ```
+  </code>
 
-  </li>
 
-  <li> <strong><em>Note that nvidia-drm is not in use anymore</em></strong>
+  <li> <strong><em>Note that nvidia-drm is not in use anymore</em></strong>  </li>
 
-  ```
+  <code>
     lsmod | grep nvidia.drm
 
-  ```
+  </code>
 
-  </li>
 
-  <li> <strong><em>Go to your download folder and run the cuda installation.</em></strong>
 
-  ```
+  <li> <strong><em>Go to your download folder and run the cuda installation.</em></strong>  </li>
+
+  <code>
   sudo sh cuda_10.1.168_418.67_linux.run
 
-  ```
+  </code>
 
-  </li>
 
-  <li> <strong><em>Start the GUI again.</em></strong>
+  <li> <strong><em>Start the GUI again.</em></strong>  </li>
 
-  ```
+  <code>
   sudo systemctl start graphical.target
 
-  ```
+  </code>
 
-  </li>
 
 </ul>
 </p>
