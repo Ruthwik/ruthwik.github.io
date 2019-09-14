@@ -13,23 +13,21 @@ bigimg:
 
 
 <p>
-The first thing I did after I bought a laptop with NVIDIA GPU was to install TensorFlow. I skimmed through many blogs and pages on how to install and I found this page by Christian Janze. He did a great job of putting everything together in one place. I'm creating this page on similar lines but adding few of my own touches and experiences while installing TensorFlow.
+The first thing that I did after I bought a laptop with NVIDIA GPU was to install TensorFlow. I skimmed through many blogs and pages on how to install and I found a page by Christian Janze. He did a great job of putting everything together in one place. I'm creating this page on similar lines but added my own touch and experiences while installing TensorFlow.
 
 <h3>Level 0</h3>
 <p>
 All the Prerequisites required before starting the installation.
 
 <ul>
-<li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong>
-
+<li> <strong><em>Install GNU Compiler Collection (GCC)</em></strong></li>
 
   ```
     sudo apt update && sudo apt install gcc
 
   ```
+<img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%">
 
-  <img src="/img/install_tensorflow_gpu/gcc.jpg" alt="docker_core" height="85%" width="100%">
-  </li>
 
   <li> <strong><em>Install build-essential package</em></strong>
 
@@ -60,7 +58,7 @@ All the Prerequisites required before starting the installation.
 <p>
 The driver can be either downloaded from <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us">here.</a>
 
-I used the following commands to install as it easy and simple.
+I used the following commands to install as it easy and simple.</p>
 
 ```
   sudo apt update
@@ -68,7 +66,7 @@ I used the following commands to install as it easy and simple.
   sudo ubuntu-drivers autoinstall
 
 ```
-
+<p>
 If everything goes well after firing these commands, then reboot your machine. The status of Nvidia GPU can be checked with the <code>nvidia-smi</code>.
 
 <img src="/img/install_tensorflow_gpu/nvidia_smi.jpg" alt="docker_core" height="85%" width="100%">
