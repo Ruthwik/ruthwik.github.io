@@ -213,13 +213,14 @@ This can be done in two ways one by using pip and another by using conda if you 
 </p>
 
 <h4>Verify TensorFlow installation</h4>
-<p>
+
 
 <code>
   python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
-<code><br>
+</code><br>
 
 <h4>Using Conda</h4>
+<p>
 <img src="/img/install_tensorflow_gpu/terminal.jpg" alt="docker_core" height="85%" width="100%">
 </p>
 
