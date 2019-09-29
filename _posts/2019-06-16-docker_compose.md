@@ -7,7 +7,7 @@ categories: other
 tags: [docker, containerization]
 
 bigimg:
-  - ""/img/dockercompose/docker-compose.jpg" : Photo by sergio souza on Unsplash
+  - "/img/dockercompose/docker-compose.jpg" : Photo by sergio souza on Unsplash
 
 ---
 
