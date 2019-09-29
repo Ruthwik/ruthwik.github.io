@@ -8,7 +8,7 @@ tags: [docker, containerization]
 
 bigimg:
   - "/img/dockerbuild/containers.jpg" : "image source Google"
-  - "/img/dockerbuild/containers.jpg" : "Photo by chuttersnap on Unsplash"
+  - "/img/dockerbuild/containers2.jpg" : "Photo by chuttersnap on Unsplash"
 
 
 ---
