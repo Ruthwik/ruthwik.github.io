@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a Docker image 
+title: Building a Docker image
 subtitle: First Docker image.
 published: true
 categories: other
@@ -21,7 +21,7 @@ Wikipedia defines Docker as
 <h3>What is a Dockerfile</h3>
 <p>
 Dockerfile is a script, composed of various commands (instructions) and arguments listed successively to automatically perform actions on a base image
-in order to create (or form) a new one. 
+in order to create (or form) a new one.
 They are used for organizing things and greatly help with deployments by simplifying the process start-to-finish.
 
 The following are the steps to create your first docker image.
@@ -41,7 +41,7 @@ There are a dozen commands but we will touch a few of them that are useful in bu
 
 <h4>FROM</h4>
 <p>
-This is the most important among all the commands. This defines the base image which is used to build the process. If 
+This is the most important among all the commands. This defines the base image which is used to build the process. If
 FROM is not found locally on the host, Docker will try to download from the Docker hub.
 </p>
 
@@ -62,7 +62,7 @@ This declares the author/creator of the dockerfile. This just helps for future r
 
 <h4>RUN</h4>
 <p>
-The RUN command is the central executing directive for Dockerfiles. It takes a command as its argument and runs it to form the image. 
+The RUN command is the central executing directive for Dockerfiles. It takes a command as its argument and runs it to form the image.
 Unlike CMD, it actually is used to build the image (forming another layer on top of the previous one which is committed).
 </p>
 
@@ -105,7 +105,7 @@ ubuntu as our base image
 ```
 	# Set the base image to Ubuntu
 	FROM ubuntu
-	
+
 ```
 
 <h4>MAINTAINER/AUTHOR</h4>
@@ -114,7 +114,7 @@ ubuntu as our base image
 ```
 	# File Author / Maintainer
 	MAINTAINER ruthwik
-	
+
 ```
 
 <h4>Setting up the commands </h4>
@@ -126,7 +126,7 @@ ubuntu as our base image
 
 	# Command to print
 	CMD "echo" "Hello World...  from my first docker image"
-	
+
 ```
 <img src="/img/dockerbuild/dockerfile.png" alt="dockerfile"/>
 
@@ -152,7 +152,41 @@ Use the following to create your first image
 <img src="/img/dockerbuild/dockerrun.png" alt="dockerrun"/>
 
 
+<h3>Portainer</h3>
+<p>
+Portainer is a lightweight management UI which allows you to easily manage your different Docker environments (Docker hosts or Swarm clusters).
+</p>
 
+<h4>Pull and Run the image</h4>
+
+```
+  docker pull portainer/portainer
+
+  docker volume create portainer_data
+
+	docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+```
+<h4>Login to Adminpage</h4>
+
+<img src="/img/dockerbuild/portainer_login.png" alt="dockerrun"/>
+
+<h4>Portainer Home page</h4>
+<img src="/img/dockerbuild/portainer_home.png" alt="dockerrun"/>
+
+<h4>Portainer Dashboard</h4>
+<img src="/img/dockerbuild/portainer_home.png" alt="dockerrun"/>
+
+<h4>Check the list of images</h4>
+<img src="/img/dockerbuild/portainer_imagelist.png" alt="dockerrun"/>
+
+<h4>Check the list of containers</h4>
+<img src="/img/dockerbuild/portainer_containerlist.png" alt="dockerrun"/>
+
+<h4>Container logs</h4>
+<img src="/img/dockerbuild/portainer_container_logs.png" alt="portainer_container_logs"/>
+
+<h4>Container statistics</h4>
+<img src="/img/dockerbuild/portainer_container_stats.png" alt="portainer_container_stats"/>
 
 <p>If you have any question or feedback, please do reach out to me by commenting below.</p>
-
