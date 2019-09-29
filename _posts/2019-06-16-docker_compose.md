@@ -7,7 +7,7 @@ categories: other
 tags: [docker, containerization]
 
 bigimg:
-  - /img/dockerbuild/containers.jpg
+  - /img/dockercompose/docker-compose.jpg
 
 ---
 
@@ -119,5 +119,11 @@ This command help to run the containers in a silent mode.
 ```
 	docker-compose down
 ```
+
+<h3>An Example</h3>
+<p>
+The following example shows a docker-compose file which has various services along with zookeeper and kafka.
+</p>
+<script src="https://gist.github.com/Ruthwik/c5b0df0cc2bd4dbc4803b715e72cc82b.js"></script>
 
 <p>If you have any question or feedback, please do reach out to me by commenting below.</p>

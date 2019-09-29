@@ -176,22 +176,24 @@ Add the path in .bashrc file:
 Please head over to the NVIDIA cuDNN website and click on the green Download cuDNN button. Unfortunately, you have to register for the NVIDIA Developer Program. Once you are registered, go to the NVIDIA cuDNN website and fill in the survey to reach the download page.
 
 <img src="/img/install_tensorflow_gpu/cuDNN_download.jpg" alt="docker_core" height="85%" width="100%"><br>
-
-
+</p>
+<p>
 <code>
 
   sudo dpkg -i libcudnn7_7.6.2.24-1+cuda10.1_amd64.deb
-</code><br>
+</code><br></p>
+<p>
 <code>
   sudo dpkg -i libcudnn7-dev_7.6.2.24-1+cuda10.1_amd64.deb
-</code><br>
+</code><br></p>
+<p>
 <code>
   sudo dpkg -i libcudnn7-doc_7.6.2.24-1+cuda10.1_amd64.deb=
-</code><br>
-
+</code><br></p>
+<p>
 <img src="/img/install_tensorflow_gpu/cuDNN.jpg" alt="docker_core" height="85%" width="100%">
-
 </p>
+
 
 <h4>Verify the installation of NVIDIA’s CUDA Toolkit 10 compiler driver</h4>
 <p>
