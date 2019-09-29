@@ -3,12 +3,14 @@ layout: page
 title: Machine Learning Blog
 meta-title: "Ruthwik Masina"
 use-site-title: true
+bigimg:
+  - "/img/MLBLogLanding/landing1.jpg" : "Photo by Franki Chamaki on Unsplash"
 ---
 
 <div class="posts-list">
 {% for post in site.posts %}
    {% if post.categories contains 'machinelearning' %}
-   
+
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
 	  <h2 class="post-title">{{ post.title }}</h2>
