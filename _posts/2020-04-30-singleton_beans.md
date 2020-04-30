@@ -7,12 +7,13 @@ categories: other
 tags: [singleton, Spring ,Bean, Spring Boot, Java]
 
 bigimg:
-  - /img/singletonbean/homepage.jpg
+  - ""/img/singletonbean/homepage.jpg" : Photo by Joris Molenaar on Unsplash
 
 ---
 
 
 <p>
+The biggest challenge in any application is how to maintain the thread safety. If not it may lead to race conditions or deadlocks. In this post we will look at whether a singleton bean in a spring application is thread safe or not.
 <code>Serialization</code> is the process of converting an object into a stream of bytes to store the object or tranfer over a network. Its main purpose is to save the state of an object in order to be able to recreate it when needed. The reverse process is called deserialization. There are various ways to achieve serialization/deserialization like JSON, XML, Avro or in Java using Serializable interface. This post is about Protocol Buffers which started gaining popularity in the recent years for its efficient serialization and deserialization.
 </p>
 <img src="/img/protobuf/serialization.png" alt="serialization" height="100%" width="100%">
