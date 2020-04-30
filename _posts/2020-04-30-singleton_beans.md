@@ -7,7 +7,7 @@ categories: other
 tags: [singleton, Spring ,Bean, Spring Boot, Java]
 
 bigimg:
-  - ""/img/singletonbean/homepage.jpg" : Photo by Joris Molenaar on Unsplash
+  - "/img/singletonbean/homepage.jpg" : Photo by Joris Molenaar on Unsplash
 
 ---
 
