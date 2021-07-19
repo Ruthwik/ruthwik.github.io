@@ -2,7 +2,7 @@
 layout: post
 title: Is spring singleton bean thread safe?
 subtitle: An approach for thread safety.
-published: true
+published: false
 categories: other
 tags: [singleton, Spring ,Bean, Spring Boot, Java]
 
